@@ -1,0 +1,809 @@
+---
+import '@fontsource-variable/archivo';
+
+/* ── bilingual content ── */
+const COPY = {
+  es: {
+    nav: { about: 'Sobre mí', work: 'Proyectos', exp: 'Experiencia', stack: 'Stack', life: 'Intereses', contact: 'Contacto' },
+    hero: { role: 'Full Stack Developer', cta1: 'Proyectos', cta2: 'Descargar CV' },
+    about: {
+      tag: 'Sobre mí',
+      h2a: 'Entender el problema ',
+      h2b: 'antes de elegir el stack.',
+      caption: 'París, 2025',
+      p1: 'Soy desarrollador full stack. Trabajo en la Unión Argentina de la Iglesia Adventista del Séptimo Día construyendo y manteniendo los sistemas internos que usa la organización, y en paralelo curso Ingeniería en Sistemas de Información en la Universidad Adventista del Plata.',
+      p2: 'Me muevo entre frontend y backend: modelo datos, armo APIs, diseño interfaces y automatizo lo que se repite. En Fisiopasteur además hago de Scrum Manager, así que estoy acostumbrado a hablar directo con quien va a usar el sistema.',
+      p3: 'Antes de programar trabajé en compras, logística y atención al público, en Argentina y en Irlanda. De ahí me quedó algo que uso todos los días: preguntar bien y explicar sin vueltas.',
+    },
+    work: {
+      tag: 'Proyectos', h2: 'Cada parcela, un proyecto',
+      hint: 'Recorré el mapa con el cursor. Click en una parcela para ver el detalle.',
+      legend: 'Parcela', visit: 'Ver el sitio',
+      empty: { title: 'El terreno', desc: 'Cuatro parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] },
+    },
+    exp: {
+      tag: 'Experiencia', h2: 'Recorrido',
+      items: [
+        { when: 'Dic 2025 — Presente', role: 'Desarrollador Full Stack', org: 'Unión Argentina · Iglesia Adventista del Séptimo Día', text: 'Desarrollo y mantenimiento de sistemas web internos para la gestión organizacional. Funcionalidades con Nuxt.js, Prisma ORM, REST APIs, .NET, C# y SQL Server; mejora de infraestructura y soporte a usuarios, trabajando con equipos multidisciplinarios.' },
+        { when: '2024 — Presente', role: 'Desarrollador Full Stack', org: 'Fisiopasteur · Centro Kinesiológico', text: 'App web para digitalizar la gestión de pacientes, con recordatorios automáticos por WhatsApp. También como Scrum Manager: planificación de sprints, refinamiento de backlog y comunicación continua con el cliente.' },
+        { when: 'Dic 2023 — Mar 2024', role: 'Analista de Compras', org: 'Alimentos Granix · Buenos Aires', text: 'Administración de la cartera de proveedores, procesamiento de facturas y negociación de términos. Optimización de flujos de adquisición y coordinación entre áreas.' },
+        { when: 'Feb 2022 — Nov 2022', role: 'Gerente de Inventario & Mozo', org: "The O'Malley Group · Dublín, Irlanda", text: 'Promovido a gerente de inventario: control de stock, pedidos a proveedores y soporte operativo en un entorno multicultural.' },
+        { when: 'Dic 2020 — Jul 2021', role: 'Operador Logístico / Analista de Archivo', org: 'Alimentos Granix · Buenos Aires', text: 'Logística de productos, control de inventario y archivo de registros físicos y digitales.' },
+      ],
+    },
+    edu: {
+      tag: 'Educación',
+      items: [
+        { when: '2023 — 2027', title: 'Ingeniería en Sistemas de Información', org: 'Universidad Adventista del Plata, Argentina' },
+        { when: '2020', title: 'Diploma Secundario · Finanzas y Administración', org: 'Instituto Adventista Florida, Argentina' },
+      ],
+    },
+    stack: {
+      tag: 'Herramientas', h2: 'Con qué trabajo', hint: 'La herramienta la elige el problema.',
+      groups: [
+        { name: 'Lenguajes', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
+        { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
+        { name: 'Backend & datos', items: ['ASP.NET', '.NET', 'PostgreSQL', 'SQL Server', 'Supabase', 'Prisma ORM', 'REST APIs'] },
+        { name: 'Herramientas', items: ['Git', 'GitHub', 'Docker', 'nginx', 'n8n', 'WhatsApp API', 'CI/CD'] },
+        { name: 'Metodologías', items: ['Scrum', 'Agile', 'Kanban'] },
+        { name: 'Idiomas', items: ['Español nativo', 'Inglés B2 · Cambridge'] },
+      ],
+    },
+    life: {
+      tag: 'Intereses', h2: 'Además del código',
+      items: [
+        { title: 'Viajar', text: 'Dublín, París y lo que venga. Cambiar de paisaje.' },
+        { title: 'Deporte', text: 'Rutina y constancia, casi siempre al aire libre.' },
+        { title: 'Escribir', text: 'Notas, ideas y textos para ordenar lo que pienso.' },
+        { title: 'Cocinar', text: 'Recetas, tiempos y prueba y error.' },
+        { title: 'Editar', text: 'Video e imagen: composición y ritmo.' },
+        { title: 'Oficios', text: 'Trabajo manual: entender cómo se arma algo.' },
+        { title: 'Conocer gente', text: 'Conversaciones con gente distinta a mí.' },
+        { title: 'Voluntariado', text: 'Proyectos comunitarios y clubes juveniles.' },
+      ],
+    },
+    contact: { tag: 'Contacto', where: 'Ubicación', cv: 'CV', built: 'Hecho con Astro' },
+  },
+  en: {
+    nav: { about: 'About', work: 'Work', exp: 'Experience', stack: 'Stack', life: 'Interests', contact: 'Contact' },
+    hero: { role: 'Full Stack Developer', cta1: 'Projects', cta2: 'Download CV' },
+    about: {
+      tag: 'About',
+      h2a: 'Understand the problem ',
+      h2b: 'before picking the stack.',
+      caption: 'Paris, 2025',
+      p1: "I'm a full stack developer. I work at the Argentine Union of the Seventh-day Adventist Church building and maintaining the internal systems the organisation runs on, while studying Information Systems Engineering at Universidad Adventista del Plata.",
+      p2: "I move between frontend and backend: I model data, build APIs, design interfaces and automate whatever repeats. At Fisiopasteur I also act as Scrum Manager, so I'm used to talking directly to the people who will use the system.",
+      p3: 'Before coding I worked in purchasing, logistics and hospitality, in Argentina and Ireland. That left me with something I use every day: asking the right questions and explaining things plainly.',
+    },
+    work: {
+      tag: 'Work', h2: 'One plot, one project',
+      hint: 'Move across the map. Click a plot to open its detail.',
+      legend: 'Plot', visit: 'Visit site',
+      empty: { title: 'The land', desc: 'Four worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] },
+    },
+    exp: {
+      tag: 'Experience', h2: 'The route so far',
+      items: [
+        { when: 'Dec 2025 — Present', role: 'Full Stack Developer', org: 'Unión Argentina · Seventh-day Adventist Church', text: 'Development and maintenance of internal web systems for organisational management. Features with Nuxt.js, Prisma ORM, REST APIs, .NET, C# and SQL Server; infrastructure improvement and user support, working with multidisciplinary teams.' },
+        { when: '2024 — Present', role: 'Full Stack Developer', org: 'Fisiopasteur · Kinesiology Centre', text: 'Web app digitising patient management, with automated WhatsApp reminders. Also acting as Scrum Manager: sprint planning, backlog refinement and ongoing client communication.' },
+        { when: 'Dec 2023 — Mar 2024', role: 'Purchasing Analyst', org: 'Alimentos Granix · Buenos Aires', text: 'Managed the supplier portfolio, processed invoices and negotiated terms. Optimised procurement workflows and cross-department coordination.' },
+        { when: 'Feb 2022 — Nov 2022', role: 'Inventory Manager & Waiter', org: "The O'Malley Group · Dublin, Ireland", text: 'Promoted to Inventory Manager: stock control, supplier coordination and operational support in a multicultural environment.' },
+        { when: 'Dec 2020 — Jul 2021', role: 'Logistics Operator / Archive Analyst', org: 'Alimentos Granix · Buenos Aires', text: 'Product logistics, inventory control and physical and digital record archiving.' },
+      ],
+    },
+    edu: {
+      tag: 'Education',
+      items: [
+        { when: '2023 — 2027', title: 'B.S. in Information Systems Engineering', org: 'Universidad Adventista del Plata, Argentina' },
+        { when: '2020', title: 'High School Diploma · Finance & Business Administration', org: 'Instituto Adventista Florida, Argentina' },
+      ],
+    },
+    stack: {
+      tag: 'Tools', h2: 'What I work with', hint: 'The problem picks the tool.',
+      groups: [
+        { name: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
+        { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
+        { name: 'Backend & data', items: ['ASP.NET', '.NET', 'PostgreSQL', 'SQL Server', 'Supabase', 'Prisma ORM', 'REST APIs'] },
+        { name: 'Tooling', items: ['Git', 'GitHub', 'Docker', 'nginx', 'n8n', 'WhatsApp API', 'CI/CD'] },
+        { name: 'Methods', items: ['Scrum', 'Agile', 'Kanban'] },
+        { name: 'Languages spoken', items: ['Native Spanish', 'English B2 · Cambridge'] },
+      ],
+    },
+    life: {
+      tag: 'Interests', h2: 'Besides the code',
+      items: [
+        { title: 'Travel', text: 'Dublin, Paris and whatever comes next.' },
+        { title: 'Sport', text: 'Routine and consistency, mostly outdoors.' },
+        { title: 'Writing', text: 'Notes, ideas and drafts to sort out what I think.' },
+        { title: 'Cooking', text: 'Recipes, timing, trial and error.' },
+        { title: 'Editing', text: 'Video and image: composition and rhythm.' },
+        { title: 'Trades', text: "Hands-on work: how things are actually built." },
+        { title: 'Meeting people', text: 'Conversations with people unlike me.' },
+        { title: 'Volunteering', text: 'Community projects and youth clubs.' },
+      ],
+    },
+    contact: { tag: 'Contact', where: 'Location', cv: 'CV', built: 'Built with Astro' },
+  },
+};
+
+/* ── projects data ── */
+const PROJECTS = {
+  es: [
+    { id: 'fisio', num: '01', name: 'Fisiopasteur', kind: 'Gestión clínica', area: '1/1/3/3', fill: '#93A288',
+      desc: 'App web que digitaliza la gestión de pacientes de un centro kinesiológico: turnos, fichas, profesionales y recordatorios automáticos por WhatsApp.',
+      tags: ['Next.js', 'TypeScript', 'Supabase', 'WhatsApp API'],
+      rows: [{ k: 'Rol', v: 'Full stack · Scrum Manager' }, { k: 'Ámbito', v: 'Salud' }, { k: 'Desde', v: '2024' }],
+      url: 'https://fisiopasteur.vercel.app' },
+    { id: 'conqui', num: '02', name: 'Conquidex', kind: 'Gestión integral', area: '1/4/2/6', fill: '#7E9070',
+      desc: 'Plataforma para la gestión de Clubes de Conquistadores: miembros, unidades, clases, asistencia y reportes. Pensada para que la use un equipo de voluntarios sin perfil técnico.',
+      tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind'],
+      rows: [{ k: 'Rol', v: 'Producto y desarrollo' }, { k: 'Ámbito', v: 'Clubes juveniles' }, { k: 'Estado', v: 'En producción' }],
+      url: 'https://conquidex.vercel.app' },
+    { id: 'balances', num: '03', name: '!Balances', kind: 'Finanzas', area: '3/3/5/5', fill: '#A6B49E',
+      desc: 'Gestión presupuestaria personal: dinero, gastos e inversiones con una lectura clara del balance en el tiempo.',
+      tags: ['TypeScript', 'React', 'PostgreSQL', 'Prisma'],
+      rows: [{ k: 'Rol', v: 'Diseño y desarrollo' }, { k: 'Ámbito', v: 'Finanzas personales' }, { k: 'Estado', v: 'En producción' }],
+      url: 'https://nomecierranlosbalances.vercel.app' },
+    { id: 'cancionito', num: '04', name: 'Cancionito', kind: 'Bot de WhatsApp', area: '4/1/5/3', fill: '#889A7C',
+      desc: 'Bot de WhatsApp que devuelve al instante la letra y los acordes de un himno. Sin apps, sin buscar: se escribe el nombre y llega la imagen.',
+      tags: ['C#', 'ASP.NET', 'Python', 'ngrok'],
+      rows: [{ k: 'Rol', v: 'Idea y desarrollo' }, { k: 'Ámbito', v: 'Proyecto propio' }, { k: 'Interfaz', v: 'WhatsApp' }],
+      url: '' },
+  ],
+  en: [
+    { id: 'fisio', num: '01', name: 'Fisiopasteur', kind: 'Clinical ops', area: '1/1/3/3', fill: '#93A288',
+      desc: 'Web app digitising patient management for a physiotherapy centre: appointments, records, practitioners and automated WhatsApp reminders.',
+      tags: ['Next.js', 'TypeScript', 'Supabase', 'WhatsApp API'],
+      rows: [{ k: 'Role', v: 'Full stack · Scrum Manager' }, { k: 'Field', v: 'Health' }, { k: 'Since', v: '2024' }],
+      url: 'https://fisiopasteur.vercel.app' },
+    { id: 'conqui', num: '02', name: 'Conquidex', kind: 'Full management', area: '1/4/2/6', fill: '#7E9070',
+      desc: 'Platform for Pathfinder club management: members, units, class records, attendance and reports. Built to be run by volunteers with no technical background.',
+      tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind'],
+      rows: [{ k: 'Role', v: 'Product and development' }, { k: 'Field', v: 'Youth clubs' }, { k: 'Status', v: 'Live' }],
+      url: 'https://conquidex.vercel.app' },
+    { id: 'balances', num: '03', name: '!Balances', kind: 'Finance', area: '3/3/5/5', fill: '#A6B49E',
+      desc: 'Personal budgeting: money, expenses and investments with a clear read of your balance over time.',
+      tags: ['TypeScript', 'React', 'PostgreSQL', 'Prisma'],
+      rows: [{ k: 'Role', v: 'Design and development' }, { k: 'Field', v: 'Personal finance' }, { k: 'Status', v: 'Live' }],
+      url: 'https://nomecierranlosbalances.vercel.app' },
+    { id: 'cancionito', num: '04', name: 'Cancionito', kind: 'WhatsApp bot', area: '4/1/5/3', fill: '#889A7C',
+      desc: "WhatsApp bot that instantly returns hymn lyrics and chord images. No app, no searching: type the name, get the sheet.",
+      tags: ['C#', 'ASP.NET', 'Python', 'ngrok'],
+      rows: [{ k: 'Role', v: 'Idea and development' }, { k: 'Field', v: 'Personal project' }, { k: 'Interface', v: 'WhatsApp' }],
+      url: '' },
+  ],
+};
+
+const FILLERS = [
+  { area: '1/3/2/4', fill: '#C9CFAE' },
+  { area: '2/3/3/4', fill: '#D8D8BA' },
+  { area: '2/4/3/5', fill: '#B4C09F' },
+  { area: '2/5/3/6', fill: '#CFD3B2' },
+  { area: '3/1/4/2', fill: '#BCC7A6' },
+  { area: '3/2/4/3', fill: '#D3D5B6' },
+  { area: '3/5/4/6', fill: '#A9B695' },
+  { area: '4/3/5/4', fill: '#C6CDAB' },
+  { area: '4/4/5/5', fill: '#B0BC9B' },
+  { area: '4/5/5/6', fill: '#D8D8BA' },
+];
+
+const SHAPES = ['50%', '1px', '50% 50% 50% 1px', '1px', '50%', '50% 1px 50% 1px', '50%', '1px'];
+const LIFE_COLORS = ['#4E635E', '#A6B49E', '#818C78', '#93A288', '#4E635E', '#818C78', '#A6B49E', '#93A288'];
+
+const es = COPY.es;
+const en = COPY.en;
+const esProjects = PROJECTS.es;
+const enProjects = PROJECTS.en;
+---
+
+<!doctype html>
+<html lang="es" data-lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Andrew Block Ernst — Full Stack Developer" />
+    <title>Andrew Block Ernst — Full Stack Developer</title>
+  </head>
+  <body>
+    <div style="width:100%; overflow-x:hidden; background:#F2F1E4">
+
+      <!-- ===== HEADER ===== -->
+      <header style="position:sticky; top:0; z-index:60; display:flex; flex-wrap:wrap; align-items:center; gap:14px 26px; padding:13px clamp(18px,5vw,64px); background:rgba(242,241,228,0.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(79,99,94,0.18)">
+        <a href="#top" aria-label="Andrew Block Ernst" style="margin-right:auto; display:flex; align-items:center; height:30px">
+          <img src="/images/logo.png" alt="Andrew Block Ernst" style="height:28px; width:auto; display:block" />
+        </a>
+        <nav class="main-nav" style="display:flex; flex-wrap:wrap; gap:clamp(11px,1.8vw,24px); font-size:12.5px; letter-spacing:0.04em; color:#4E635E">
+          <a href="#sobre" style="padding:4px 0"><span class="lang-es">{es.nav.about}</span><span class="lang-en">{en.nav.about}</span></a>
+          <a href="#proyectos" style="padding:4px 0"><span class="lang-es">{es.nav.work}</span><span class="lang-en">{en.nav.work}</span></a>
+          <a href="#experiencia" style="padding:4px 0"><span class="lang-es">{es.nav.exp}</span><span class="lang-en">{en.nav.exp}</span></a>
+          <a href="#stack" style="padding:4px 0"><span class="lang-es">{es.nav.stack}</span><span class="lang-en">{en.nav.stack}</span></a>
+          <a href="#intereses" style="padding:4px 0"><span class="lang-es">{es.nav.life}</span><span class="lang-en">{en.nav.life}</span></a>
+          <a href="#contacto" style="padding:4px 0"><span class="lang-es">{es.nav.contact}</span><span class="lang-en">{en.nav.contact}</span></a>
+        </nav>
+        <div style="display:flex; align-items:center; border:1px solid rgba(79,99,94,0.3); overflow:hidden; font-size:11.5px; font-weight:700; letter-spacing:0.06em">
+          <button type="button" data-set-lang="es" class="lang-btn" style="border:0; cursor:pointer; padding:6px 10px; font:inherit">ES</button>
+          <button type="button" data-set-lang="en" class="lang-btn" style="border:0; cursor:pointer; padding:6px 10px; font:inherit">EN</button>
+        </div>
+      </header>
+
+      <!-- ===== HERO ===== -->
+      <section id="top" style="position:relative; min-height:min(86vh,780px); display:flex; align-items:flex-end; overflow:hidden; background:linear-gradient(#CBDDE1 0%, #DCE5D9 58%, #E7E7CE 100%)">
+        <div id="parA" style="position:absolute; left:-5%; right:-5%; top:10%; height:36%; background:radial-gradient(60% 100% at 20% 100%, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%), radial-gradient(50% 100% at 64% 100%, rgba(255,255,255,0.7), rgba(255,255,255,0) 72%); pointer-events:none"></div>
+        <div id="parB" style="position:absolute; left:-8%; right:-8%; bottom:26%; height:26%; background:#9FB1A4; clip-path:polygon(0% 62%, 12% 40%, 26% 55%, 40% 26%, 55% 50%, 70% 32%, 84% 52%, 100% 38%, 100% 100%, 0% 100%); opacity:0.75"></div>
+        <div id="parC" style="position:absolute; left:-8%; right:-8%; bottom:14%; height:24%; background:#81907C; clip-path:polygon(0% 70%, 15% 50%, 32% 66%, 48% 44%, 64% 62%, 80% 46%, 100% 64%, 100% 100%, 0% 100%)"></div>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:18%; background:linear-gradient(#6E7D70, #56655C)"></div>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:18%; background:repeating-linear-gradient(103deg, rgba(226,224,200,0.14) 0 2px, rgba(226,224,200,0) 2px 26px)"></div>
+
+        <div style="position:relative; z-index:2; width:100%; padding:clamp(56px,10vw,120px) clamp(18px,5vw,64px) clamp(52px,8vw,92px)">
+          <div style="max-width:1180px; margin:0 auto">
+            <h1 style="margin:0; font-weight:800; font-size:clamp(46px,11vw,152px); line-height:0.86; letter-spacing:-0.035em; text-transform:uppercase; color:#22302B">Andrew<br />Block<br />Ernst</h1>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 28px; margin-top:clamp(24px,4vw,40px)">
+              <span style="font-weight:700; font-size:clamp(12px,1.4vw,15px); letter-spacing:0.14em; text-transform:uppercase; color:#3B4B45">Full Stack Developer</span>
+              <div style="display:flex; flex-wrap:wrap; gap:10px">
+                <a href="#proyectos" class="btn-primary"><span class="lang-es">{es.hero.cta1}</span><span class="lang-en">{en.hero.cta1}</span></a>
+                <a href="/assets/cv-andrew-es.pdf" target="_blank" rel="noopener" class="btn-outline lang-es">{es.hero.cta2}</a>
+                <a href="/assets/cv-andrew-en.pdf" target="_blank" rel="noopener" class="btn-outline lang-en">{en.hero.cta2}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SOBRE MÍ ===== -->
+      <section id="sobre" style="padding:clamp(64px,10vw,128px) clamp(18px,5vw,64px); background:#F2F1E4">
+        <div data-reveal style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(34px,6vw,76px); align-items:start; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+          <div>
+            <div style="position:relative; overflow:hidden; background:#DCDCC4; aspect-ratio:4/5; max-width:430px">
+              <img src="/images/retrato.jpg" alt="Andrew Block Ernst" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.8) contrast(1.03)" />
+              <div style="position:absolute; inset:0; background:linear-gradient(200deg, rgba(78,99,94,0.2), rgba(226,224,200,0.14))"></div>
+            </div>
+            <div style="margin-top:12px; font-size:11.5px; letter-spacing:0.08em; color:#6C7C74">
+              <span class="lang-es">{es.about.caption}</span><span class="lang-en">{en.about.caption}</span>
+            </div>
+          </div>
+          <div>
+            <p class="section-tag"><span class="lang-es">{es.about.tag}</span><span class="lang-en">{en.about.tag}</span></p>
+            <h2 style="margin:0 0 26px; font-weight:700; font-size:clamp(27px,4vw,44px); line-height:1.06; letter-spacing:-0.025em; color:#22302B; max-width:24ch; text-wrap:balance">
+              <span class="lang-es">{es.about.h2a}<span style="color:#8A9890">{es.about.h2b}</span></span>
+              <span class="lang-en">{en.about.h2a}<span style="color:#8A9890">{en.about.h2b}</span></span>
+            </h2>
+            <div class="about-text">
+              <p><span class="lang-es">{es.about.p1}</span><span class="lang-en">{en.about.p1}</span></p>
+              <p><span class="lang-es">{es.about.p2}</span><span class="lang-en">{en.about.p2}</span></p>
+              <p><span class="lang-es">{es.about.p3}</span><span class="lang-en">{en.about.p3}</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROYECTOS ===== -->
+      <section id="proyectos" style="padding:clamp(64px,10vw,116px) clamp(18px,5vw,64px) clamp(56px,8vw,100px); background:linear-gradient(#E9E8D3, #DFE3D4)">
+        <div style="max-width:1180px; margin:0 auto">
+          <div data-reveal style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+            <div>
+              <p class="section-tag"><span class="lang-es">{es.work.tag}</span><span class="lang-en">{en.work.tag}</span></p>
+              <h2 class="section-h2"><span class="lang-es">{es.work.h2}</span><span class="lang-en">{en.work.h2}</span></h2>
+            </div>
+            <p style="margin:0; max-width:32ch; font-size:12.5px; line-height:1.6; color:#57675F">
+              <span class="lang-es">{es.work.hint}</span><span class="lang-en">{en.work.hint}</span>
+            </p>
+          </div>
+
+          <div style="margin-top:clamp(36px,6vw,60px); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,4vw,44px); align-items:center">
+            <!-- 3D Map -->
+            <div style="perspective:1100px; perspective-origin:50% 30%">
+              <div id="plot-map" style="transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(4,1fr); gap:7px; aspect-ratio:5/4; background:#E4E1C6; padding:7px; box-shadow:0 40px 70px -40px rgba(38,51,46,0.55)">
+                {/* Project plots */}
+                {esProjects.map((p, i) => (
+                  <div
+                    class="plot plot-project"
+                    data-project-id={p.id}
+                    data-idx={i}
+                    style={`grid-area:${p.area}; background:${p.fill}; transform:translateZ(6px); cursor:pointer; position:relative; transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease, filter .35s ease; box-shadow:0 10px 16px -12px rgba(38,51,46,0.4)`}
+                  >
+                    <div style={`position:absolute; inset:0; background:repeating-linear-gradient(96deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 9px); opacity:0.5`}></div>
+                    <div class="plot-glow" style="position:absolute; inset:0; background:rgba(255,255,255,0.3); opacity:0; transition:opacity .35s ease"></div>
+                    <div class="plot-dot" style="position:absolute; left:8px; top:8px; width:7px; height:7px; background:#26332E; opacity:0.55; transition:opacity .3s ease"></div>
+                    <div style="position:absolute; left:50%; top:50%; width:0; height:0; transform-style:preserve-3d; pointer-events:none">
+                      <div class="plot-bubble" style="position:absolute; left:-34px; top:-34px; width:68px; height:68px; transform-origin:50% 100%; opacity:0; transition:transform .5s cubic-bezier(.2,.9,.25,1.12), opacity .35s ease">
+                        <div style="width:100%; height:100%; border-radius:50%; overflow:hidden; background:#F2F1E4; border:1px solid rgba(38,51,46,0.18); box-shadow:0 16px 22px -14px rgba(38,51,46,0.7); display:flex; align-items:center; justify-content:center; position:relative">
+                          <span style="font-size:8.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9AA79C">{p.num}</span>
+                        </div>
+                        <div style="position:absolute; left:50%; bottom:-9px; width:2px; height:10px; margin-left:-1px; background:rgba(38,51,46,0.32)"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {/* Filler plots */}
+                {FILLERS.map((f, i) => (
+                  <div
+                    class="plot plot-filler"
+                    style={`grid-area:${f.area}; background:${f.fill}; cursor:default; position:relative; transform-style:preserve-3d; transition:filter .35s ease`}
+                  >
+                    <div style={`position:absolute; inset:0; background:${i % 2 === 0 ? 'repeating-linear-gradient(84deg, rgba(120,140,110,0.16) 0 1px, rgba(0,0,0,0) 1px 7px)' : 'repeating-linear-gradient(-78deg, rgba(120,140,110,0.13) 0 1px, rgba(0,0,0,0) 1px 11px)'}; opacity:0.5`}></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Project detail panel -->
+            <div>
+              <div id="project-panel" style="min-height:180px; padding:24px 26px; background:#F2F1E4; border:1px solid rgba(79,99,94,0.22); box-shadow:0 18px 40px -32px rgba(38,51,46,0.6)">
+                <div id="panel-preview" class="preview-stripes" style="position:relative; margin:-24px -26px 18px; aspect-ratio:16/10; overflow:hidden; display:flex; align-items:flex-end; padding:12px 14px">
+                  <span id="panel-img-label" style="font-size:10.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#7C8A80">
+                    <span class="lang-es">Pasá por una parcela para previsualizar</span>
+                    <span class="lang-en">Hover a plot to preview the project</span>
+                  </span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; padding-bottom:12px; margin-bottom:16px; border-bottom:1px solid rgba(79,99,94,0.2); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase">
+                  <span style="color:#8A9890"><span class="lang-es">{es.work.legend}</span><span class="lang-en">{en.work.legend}</span></span>
+                  <span id="panel-counter" style="color:#4E635E">— / 04</span>
+                </div>
+                <h3 id="panel-title" style="margin:0 0 10px; font-weight:700; font-size:clamp(21px,2.6vw,29px); line-height:1.06; letter-spacing:-0.02em; color:#22302B">
+                  <span class="lang-es">{es.work.empty.title}</span><span class="lang-en">{en.work.empty.title}</span>
+                </h3>
+                <p id="panel-desc" style="margin:0 0 16px; font-size:14.5px; line-height:1.6; color:#4A5A53; text-wrap:pretty">
+                  <span class="lang-es">{es.work.empty.desc}</span><span class="lang-en">{en.work.empty.desc}</span>
+                </p>
+                <div id="panel-tags" style="display:flex; flex-wrap:wrap; gap:6px">
+                  {es.work.empty.tags.map((tag) => (
+                    <span class="tech-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div style="display:grid; gap:1px; margin-top:20px; background:rgba(79,99,94,0.2)">
+                {esProjects.map((p, i) => (
+                  <button type="button" class="project-row" data-project-id={p.id} data-idx={i} style="all:unset; cursor:pointer; display:flex; align-items:center; gap:14px; padding:14px 16px; background:#F2F1E4; transition:background .25s ease">
+                    <span style="font-size:11.5px; color:#8A9890">{p.num}</span>
+                    <span style="flex:1; font-size:15px; font-weight:600; color:#22302B">{p.name}</span>
+                    <span class="project-row-kind" style="font-size:11.5px; color:#6C7C74">
+                      <span class="lang-es">{p.kind}</span><span class="lang-en">{enProjects[i].kind}</span>
+                    </span>
+                    <span style="font-size:13px; color:#4E635E; transition:transform .2s ease" class="row-arrow">→</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== EXPERIENCIA ===== -->
+      <section id="experiencia" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:#3F534D; color:#E8E7D3">
+        <div data-reveal style="max-width:1000px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+          <p class="section-tag" style="color:#9CB0A6"><span class="lang-es">{es.exp.tag}</span><span class="lang-en">{en.exp.tag}</span></p>
+          <h2 class="section-h2" style="color:#F0EFDC; margin-bottom:clamp(32px,5vw,56px)"><span class="lang-es">{es.exp.h2}</span><span class="lang-en">{en.exp.h2}</span></h2>
+          <div>
+            {es.exp.items.map((e, i) => (
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 40px; padding:24px 0; border-top:1px solid rgba(232,231,211,0.22)">
+                <div>
+                  <div style="font-size:11.5px; letter-spacing:0.06em; color:#A6B49E">
+                    <span class="lang-es">{e.when}</span><span class="lang-en">{en.exp.items[i].when}</span>
+                  </div>
+                  <div style="margin-top:8px; font-size:16px; font-weight:600; color:#F0EFDC">
+                    <span class="lang-es">{e.role}</span><span class="lang-en">{en.exp.items[i].role}</span>
+                  </div>
+                  <div style="margin-top:4px; font-size:13.5px; color:#B4C2B7">
+                    <span class="lang-es">{e.org}</span><span class="lang-en">{en.exp.items[i].org}</span>
+                  </div>
+                </div>
+                <p style="margin:0; grid-column:span 2; font-size:14.5px; line-height:1.66; color:#CFD6C9; max-width:60ch; text-wrap:pretty">
+                  <span class="lang-es">{e.text}</span><span class="lang-en">{en.exp.items[i].text}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p class="section-tag" style="color:#9CB0A6; margin-top:clamp(48px,7vw,80px)"><span class="lang-es">{es.edu.tag}</span><span class="lang-en">{en.edu.tag}</span></p>
+          <div>
+            {es.edu.items.map((d, i) => (
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 40px; padding:22px 0; border-top:1px solid rgba(232,231,211,0.22)">
+                <div>
+                  <div style="font-size:11.5px; letter-spacing:0.06em; color:#A6B49E">{d.when}</div>
+                  <div style="margin-top:8px; font-size:16px; font-weight:600; color:#F0EFDC">
+                    <span class="lang-es">{d.title}</span><span class="lang-en">{en.edu.items[i].title}</span>
+                  </div>
+                </div>
+                <div style="grid-column:span 2; font-size:14.5px; line-height:1.6; color:#CFD6C9">{d.org}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STACK ===== -->
+      <section id="stack" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:#F2F1E4">
+        <div data-reveal style="max-width:1180px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+          <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:clamp(30px,5vw,50px)">
+            <div>
+              <p class="section-tag"><span class="lang-es">{es.stack.tag}</span><span class="lang-en">{en.stack.tag}</span></p>
+              <h2 class="section-h2"><span class="lang-es">{es.stack.h2}</span><span class="lang-en">{en.stack.h2}</span></h2>
+            </div>
+            <p style="margin:0; max-width:30ch; font-size:12.5px; line-height:1.6; color:#57675F">
+              <span class="lang-es">{es.stack.hint}</span><span class="lang-en">{en.stack.hint}</span>
+            </p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(20px,3vw,36px)">
+            {es.stack.groups.map((g, gi) => (
+              <div style="padding-top:14px; border-top:2px solid #4E635E">
+                <div style="font-weight:700; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6C7C74; margin-bottom:14px">
+                  <span class="lang-es">{g.name}</span><span class="lang-en">{en.stack.groups[gi].name}</span>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:7px">
+                  {g.items.map((it, ii) => (
+                    <span class="stack-pill">
+                      <span class="lang-es">{it}</span><span class="lang-en">{en.stack.groups[gi].items[ii]}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== INTERESES ===== -->
+      <section id="intereses" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:linear-gradient(#DFE3D4, #E9E8D3)">
+        <div data-reveal style="max-width:1180px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+          <p class="section-tag"><span class="lang-es">{es.life.tag}</span><span class="lang-en">{en.life.tag}</span></p>
+          <h2 class="section-h2" style="margin-bottom:clamp(30px,5vw,52px); max-width:22ch; text-wrap:balance"><span class="lang-es">{es.life.h2}</span><span class="lang-en">{en.life.h2}</span></h2>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px">
+            {es.life.items.map((l, i) => (
+              <div class="interest-card" style="padding:20px 18px 22px; background:rgba(242,241,228,0.72); border:1px solid rgba(79,99,94,0.16); transition:transform .3s ease, background .3s ease">
+                <div style={`width:20px; height:20px; border-radius:${SHAPES[i % SHAPES.length]}; background:${LIFE_COLORS[i % LIFE_COLORS.length]}; margin-bottom:14px`}></div>
+                <div style="font-size:15.5px; font-weight:600; color:#22302B; margin-bottom:6px">
+                  <span class="lang-es">{l.title}</span><span class="lang-en">{en.life.items[i].title}</span>
+                </div>
+                <div style="font-size:13.5px; line-height:1.55; color:#5A6A62; text-wrap:pretty">
+                  <span class="lang-es">{l.text}</span><span class="lang-en">{en.life.items[i].text}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACTO ===== -->
+      <section id="contacto" style="padding:clamp(52px,7vw,88px) clamp(18px,5vw,64px) clamp(30px,4vw,44px); background:#26332E; color:#E8E7D3">
+        <div style="max-width:1180px; margin:0 auto">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(34px,6vw,72px); align-items:start">
+            <div>
+              <p class="section-tag" style="color:#8A9890"><span class="lang-es">{es.contact.tag}</span><span class="lang-en">{en.contact.tag}</span></p>
+              <img src="/images/firma.png" alt="Andrew Block Ernst" style="display:block; margin:0 0 26px; width:clamp(190px,26vw,330px); height:auto; filter:invert(1); opacity:0.9" />
+              <a href="mailto:andrewblockernst@gmail.com" class="email-link">andrewblockernst@gmail.com</a>
+            </div>
+            <div style="display:grid; gap:1px; background:rgba(232,231,211,0.18)">
+              <a href="https://github.com/andrewblockernst" target="_blank" rel="noopener" class="contact-link">GitHub<span style="font-size:12px; color:#8A9890">andrewblockernst ↗</span></a>
+              <a href="https://www.linkedin.com/in/andrewblockernst/" target="_blank" rel="noopener" class="contact-link">LinkedIn<span style="font-size:12px; color:#8A9890">/in/andrewblockernst ↗</span></a>
+              <a href="/assets/cv-andrew-es.pdf" target="_blank" rel="noopener" class="contact-link lang-es">{es.contact.cv}<span style="font-size:12px; color:#8A9890">PDF ↗</span></a>
+              <a href="/assets/cv-andrew-en.pdf" target="_blank" rel="noopener" class="contact-link lang-en">{en.contact.cv}<span style="font-size:12px; color:#8A9890">PDF ↗</span></a>
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 4px; background:#26332E; font-size:15px">
+                <span class="lang-es">{es.contact.where}</span><span class="lang-en">{en.contact.where}</span>
+                <span style="font-size:12px; color:#8A9890; text-align:right">Buenos Aires, AR</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:clamp(34px,5vw,52px); padding-top:20px; border-top:1px solid rgba(232,231,211,0.18); display:flex; flex-wrap:wrap; gap:12px 26px; justify-content:space-between; font-size:11.5px; letter-spacing:0.08em; color:#7E8C84; text-transform:uppercase">
+            <span>© 2026 Andrew Block Ernst</span>
+            <span><span class="lang-es">{es.contact.built}</span><span class="lang-en">{en.contact.built}</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROJECT MODAL ===== -->
+      <div id="project-modal" class="modal-overlay" style="display:none">
+        <div id="modal-inner" class="modal-content">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px">
+            <div>
+              <div id="modal-meta" style="font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#8A9890; margin-bottom:12px"></div>
+              <h3 id="modal-name" style="margin:0; font-weight:800; font-size:clamp(26px,4.4vw,42px); line-height:0.96; letter-spacing:-0.03em; color:#22302B"></h3>
+            </div>
+            <button type="button" id="modal-close" style="all:unset; cursor:pointer; width:34px; height:34px; border:1px solid rgba(79,99,94,0.3); display:flex; align-items:center; justify-content:center; color:#4E635E; font-size:17px; flex:none">×</button>
+          </div>
+          <p id="modal-desc" style="margin:22px 0 0; font-size:15.5px; line-height:1.68; color:#3B4B45; text-wrap:pretty"></p>
+          <div id="modal-rows" style="display:grid; gap:1px; margin:26px 0 0; background:rgba(79,99,94,0.2)"></div>
+          <div id="modal-tags" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:22px"></div>
+          <div id="modal-url-wrap" style="margin-top:26px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ esProjects: JSON.stringify(PROJECTS.es), enProjects: JSON.stringify(PROJECTS.en) }}>
+      const PROJECTS_ES = JSON.parse(esProjects);
+      const PROJECTS_EN = JSON.parse(enProjects);
+
+      /* ── Language toggle ── */
+      const root = document.documentElement;
+      document.querySelectorAll('[data-set-lang]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-set-lang');
+          root.setAttribute('data-lang', lang);
+          root.setAttribute('lang', lang);
+          try { localStorage.setItem('lang', lang); } catch (e) {}
+        });
+      });
+      try {
+        const saved = localStorage.getItem('lang');
+        if (saved) { root.setAttribute('data-lang', saved); root.setAttribute('lang', saved); }
+      } catch (e) {}
+
+      /* ── Scroll reveal ── */
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+      /* ── Parallax ── */
+      const parA = document.getElementById('parA');
+      const parB = document.getElementById('parB');
+      const parC = document.getElementById('parC');
+      let raf = null;
+      function onScroll() {
+        const y = window.scrollY || 0;
+        if (parA) parA.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
+        if (parB) parB.style.transform = 'translate3d(0,' + (y * -0.07).toFixed(1) + 'px,0)';
+        if (parC) parC.style.transform = 'translate3d(0,' + (y * -0.13).toFixed(1) + 'px,0)';
+      }
+      window.addEventListener('scroll', () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => { raf = null; onScroll(); });
+      }, { passive: true });
+
+      /* ── 3D Map ── */
+      const plotMap = document.getElementById('plot-map');
+      const narrow = window.matchMedia('(max-width: 860px)');
+      function updateMapTf() {
+        plotMap.style.transform = narrow.matches
+          ? 'rotateX(38deg) rotateZ(-4deg) scale(0.96)'
+          : 'rotateX(52deg) rotateZ(-14deg)';
+      }
+      updateMapTf();
+      narrow.addEventListener('change', updateMapTf);
+
+      /* ── Project hover/click ── */
+      const panelTitle = document.getElementById('panel-title');
+      const panelDesc = document.getElementById('panel-desc');
+      const panelTags = document.getElementById('panel-tags');
+      const panelCounter = document.getElementById('panel-counter');
+      const panelPreview = document.getElementById('panel-preview');
+      const panelImgLabel = document.getElementById('panel-img-label');
+      const fillers = document.querySelectorAll('.plot-filler');
+
+      function getLang() { return root.getAttribute('data-lang') || 'es'; }
+      function getProjects() { return getLang() === 'en' ? PROJECTS_EN : PROJECTS_ES; }
+
+      const emptyES = { title: 'El terreno', desc: 'Cuatro parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] };
+      const emptyEN = { title: 'The land', desc: 'Four worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] };
+
+      function setPanel(project) {
+        if (!project) {
+          const empty = getLang() === 'en' ? emptyEN : emptyES;
+          panelTitle.innerHTML = '<span class="lang-es">' + emptyES.title + '</span><span class="lang-en">' + emptyEN.title + '</span>';
+          panelDesc.innerHTML = '<span class="lang-es">' + emptyES.desc + '</span><span class="lang-en">' + emptyEN.desc + '</span>';
+          panelTags.innerHTML = empty.tags.map(t => '<span class="tech-tag">' + t + '</span>').join('');
+          panelCounter.textContent = '— / 04';
+          panelPreview.className = 'preview-stripes';
+          panelImgLabel.innerHTML = '<span class="lang-es">Pasá por una parcela para previsualizar</span><span class="lang-en">Hover a plot to preview the project</span>';
+          fillers.forEach(f => f.style.filter = 'saturate(1)');
+          return;
+        }
+        panelTitle.textContent = project.name;
+        panelDesc.textContent = project.desc;
+        panelTags.innerHTML = project.tags.map(t => '<span class="tech-tag">' + t + '</span>').join('');
+        panelCounter.textContent = project.num + ' / 04';
+        panelPreview.className = '';
+        panelPreview.style.background = '#E8E7D3';
+        panelImgLabel.textContent = project.name;
+        fillers.forEach(f => f.style.filter = 'saturate(0.82) brightness(0.97)');
+      }
+
+      let currentHover = null;
+      const counter = () => narrow.matches ? 'rotateZ(4deg) rotateX(-38deg)' : 'rotateZ(14deg) rotateX(-52deg)';
+
+      function highlightPlot(id) {
+        currentHover = id;
+        document.querySelectorAll('.plot-project').forEach(el => {
+          const pid = el.dataset.projectId;
+          const on = pid === id;
+          el.style.transform = on ? 'translateZ(34px)' : 'translateZ(6px)';
+          el.style.boxShadow = on ? '0 26px 34px -20px rgba(38,51,46,0.65)' : '0 10px 16px -12px rgba(38,51,46,0.4)';
+          el.querySelector('.plot-glow').style.opacity = on ? '1' : '0';
+          el.querySelector('.plot-dot').style.opacity = on ? '0' : '0.55';
+          const bubble = el.querySelector('.plot-bubble');
+          if (bubble) {
+            bubble.style.transform = counter() + (on ? ' translateY(-62px) scale(1)' : ' translateY(6px) scale(0.18)');
+            bubble.style.opacity = on ? '1' : '0';
+          }
+        });
+        document.querySelectorAll('.project-row').forEach(el => {
+          el.style.background = el.dataset.projectId === id ? '#E9E8D3' : '#F2F1E4';
+        });
+      }
+
+      function unhighlightAll() {
+        currentHover = null;
+        highlightPlot(null);
+        setPanel(null);
+      }
+
+      // Plot events
+      document.querySelectorAll('.plot-project').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          const p = getProjects().find(pr => pr.id === el.dataset.projectId);
+          highlightPlot(el.dataset.projectId);
+          setPanel(p);
+        });
+        el.addEventListener('mouseleave', unhighlightAll);
+        el.addEventListener('click', () => openModal(el.dataset.projectId));
+      });
+
+      // Row events
+      document.querySelectorAll('.project-row').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          const p = getProjects().find(pr => pr.id === el.dataset.projectId);
+          highlightPlot(el.dataset.projectId);
+          setPanel(p);
+        });
+        el.addEventListener('mouseleave', unhighlightAll);
+        el.addEventListener('click', () => openModal(el.dataset.projectId));
+      });
+
+      /* ── Modal ── */
+      const modal = document.getElementById('project-modal');
+      const modalName = document.getElementById('modal-name');
+      const modalMeta = document.getElementById('modal-meta');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalRows = document.getElementById('modal-rows');
+      const modalTags = document.getElementById('modal-tags');
+      const modalUrlWrap = document.getElementById('modal-url-wrap');
+      const modalClose = document.getElementById('modal-close');
+      const modalInner = document.getElementById('modal-inner');
+
+      function openModal(id) {
+        const p = getProjects().find(pr => pr.id === id);
+        if (!p) return;
+        modalName.textContent = p.name;
+        modalMeta.textContent = p.num + ' · ' + p.kind;
+        modalDesc.textContent = p.desc;
+        modalRows.innerHTML = p.rows.map(r =>
+          '<div style="display:flex; justify-content:space-between; gap:18px; padding:12px 2px; background:#F2F1E4">' +
+          '<span style="font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8A9890">' + r.k + '</span>' +
+          '<span style="font-size:14px; color:#3B4B45; text-align:right">' + r.v + '</span></div>'
+        ).join('');
+        modalTags.innerHTML = p.tags.map(t => '<span class="tech-tag">' + t + '</span>').join('');
+        if (p.url) {
+          const visitText = getLang() === 'en' ? 'Visit site' : 'Ver el sitio';
+          modalUrlWrap.innerHTML = '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn-primary">' + visitText + ' ↗</a>';
+        } else {
+          modalUrlWrap.innerHTML = '';
+        }
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      modalInner.addEventListener('click', (e) => e.stopPropagation());
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    </script>
+
+    <style is:global>
+      * { box-sizing: border-box; }
+      :root { font-family: 'Archivo Variable', system-ui, sans-serif; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: #F2F1E4; color: #26332E; -webkit-font-smoothing: antialiased; }
+      a { color: #4E635E; text-decoration: none; }
+      a:hover { color: #26332E; }
+      ::selection { background: #A6B49E; color: #22302B; }
+
+      /* language toggle */
+      html[data-lang='es'] .lang-en { display: none !important; }
+      html[data-lang='en'] .lang-es { display: none !important; }
+
+      .lang-btn { transition: background-color .15s, color .15s; color: #4E635E; background: transparent; }
+      html[data-lang='es'] .lang-btn[data-set-lang='es'],
+      html[data-lang='en'] .lang-btn[data-set-lang='en'] { background: #26332E; color: #EFEEDC; }
+
+      /* nav hide on mobile */
+      @media (max-width: 680px) {
+        .main-nav { display: none !important; }
+      }
+
+      /* buttons */
+      .btn-primary {
+        display: inline-flex; align-items: center; padding: 12px 22px;
+        background: #26332E; color: #EFEEDC; font-weight: 700; font-size: 12.5px;
+        letter-spacing: 0.1em; text-transform: uppercase; transition: background .2s ease;
+      }
+      .btn-primary:hover { background: #4E635E; color: #F2F1E4; }
+      .btn-outline {
+        display: inline-flex; align-items: center; padding: 12px 22px;
+        border: 1px solid rgba(38,51,46,0.4); color: #26332E; font-weight: 700;
+        font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; transition: background .2s ease;
+      }
+      .btn-outline:hover { background: rgba(255,255,255,0.55); }
+
+      /* section shared */
+      .section-tag {
+        margin: 0 0 18px; font-weight: 700; font-size: 11.5px;
+        letter-spacing: 0.18em; text-transform: uppercase; color: #8A9890;
+      }
+      .section-h2 {
+        margin: 0; font-weight: 700;
+        font-size: clamp(28px, 4.6vw, 50px); line-height: 1.02;
+        letter-spacing: -0.03em; color: #22302B;
+      }
+      .about-text p {
+        margin: 0 0 18px; font-size: clamp(15px, 1.4vw, 17px);
+        line-height: 1.68; color: #3B4B45; max-width: 56ch; text-wrap: pretty;
+      }
+
+      /* tech tags */
+      .tech-tag {
+        font-size: 11px; padding: 5px 8px;
+        background: rgba(166,180,158,0.36); color: #3F534D;
+      }
+
+      /* stack pills */
+      .stack-pill {
+        font-size: 12.5px; padding: 6px 10px;
+        background: #E5E4CE; color: #3B4B45;
+        border: 1px solid rgba(79,99,94,0.14); transition: background .2s ease, color .2s ease;
+      }
+      .stack-pill:hover { background: #A6B49E; color: #22302B; }
+
+      /* interest cards */
+      .interest-card:hover { transform: translateY(-4px); background: #F2F1E4; }
+
+      /* preview stripes */
+      .preview-stripes {
+        background: repeating-linear-gradient(135deg, #DEDDC4 0 9px, #D5D5BA 9px 18px) !important;
+      }
+
+      /* project row hover */
+      .project-row:hover { background: #E9E8D3 !important; }
+      .project-row:hover .row-arrow { transform: translateX(4px); }
+
+      /* contact */
+      .email-link {
+        display: inline-block; font-size: clamp(14px, 1.8vw, 19px);
+        color: #A6B49E; border-bottom: 1px solid rgba(166,180,158,0.5);
+        padding-bottom: 3px; transition: color .2s ease;
+      }
+      .email-link:hover { color: #F0EFDC; }
+      .contact-link {
+        display: flex; justify-content: space-between; align-items: center;
+        gap: 16px; padding: 16px 4px; background: #26332E;
+        color: #E8E7D3; font-size: 15px; transition: color .2s ease;
+      }
+      .contact-link:hover { color: #A6B49E; }
+
+      /* modal */
+      .modal-overlay {
+        position: fixed; inset: 0; z-index: 90;
+        background: rgba(38,51,46,0.62); backdrop-filter: blur(4px);
+        display: flex; align-items: center; justify-content: center;
+        padding: clamp(16px, 4vw, 48px);
+      }
+      .modal-content {
+        width: 100%; max-width: 660px; max-height: 86vh; overflow-y: auto;
+        background: #F2F1E4; padding: clamp(26px, 4vw, 44px);
+        box-shadow: 0 40px 90px -30px rgba(0,0,0,0.5);
+      }
+    </style>
+  </body>
+</html>
