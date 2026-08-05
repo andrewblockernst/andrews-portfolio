@@ -8,12 +8,9 @@ const COPY = {
     hero: { role: 'Full Stack Developer', cta1: 'Proyectos', cta2: 'Descargar CV' },
     about: {
       tag: 'Sobre mí',
-      h2a: 'Entender el problema ',
-      h2b: 'antes de elegir el stack.',
-      caption: 'París, 2025',
-      p1: 'Soy desarrollador full stack. Trabajo en la Unión Argentina de la Iglesia Adventista del Séptimo Día construyendo y manteniendo los sistemas internos que usa la organización, y en paralelo curso Ingeniería en Sistemas de Información en la Universidad Adventista del Plata.',
-      p2: 'Me muevo entre frontend y backend: modelo datos, armo APIs, diseño interfaces y automatizo lo que se repite. En Fisiopasteur además hago de Scrum Manager, así que estoy acostumbrado a hablar directo con quien va a usar el sistema.',
-      p3: 'Antes de programar trabajé en compras, logística y atención al público, en Argentina y en Irlanda. De ahí me quedó algo que uso todos los días: preguntar bien y explicar sin vueltas.',
+      p1: 'Soy Analista de Desarrollo e Infraestructura en la Unión Argentina y estudiante de 4° año de Ingeniería en Sistemas. Además del desarrollo, me apasionan las redes y la seguridad de la infraestructura. Me impulsa la mejora continua, buscando proyectos para diseñar soluciones integrales que resuelvan problemas reales.',
+      p2: 'Desarrollo aplicaciones full-stack, administro entornos Linux y cuido la experiencia de usuario. Al liderar el flujo de trabajo, funciono como puente directo entre los requerimientos técnicos y las necesidades reales del usuario.',
+      p3: 'Mi experiencia previa en compras y logística en Argentina e Irlanda me ayudó a desarrollar habilidades blandas que hoy aplico a diario. Aprendí a escuchar con empatía para comprender la necesidad real detrás de cada problema, y a comunicar las soluciones técnicas de una manera clara y cercana.',
     },
     work: {
       tag: 'Proyectos', h2: 'Cada parcela, un proyecto',
@@ -39,7 +36,7 @@ const COPY = {
       ],
     },
     stack: {
-      tag: 'Herramientas', h2: 'Con qué trabajo', hint: 'La herramienta la elige el problema.',
+      h2: 'Herramientas',
       groups: [
         { name: 'Lenguajes', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -52,13 +49,13 @@ const COPY = {
     life: {
       tag: 'Intereses', h2: 'Además del código',
       items: [
-        { title: 'Viajar', text: 'Dublín, París y lo que venga. Cambiar de paisaje.' },
+        { title: 'Viajar', text: 'Lo que venga.' },
         { title: 'Deporte', text: 'Rutina y constancia, casi siempre al aire libre.' },
         { title: 'Escribir', text: 'Notas, ideas y textos para ordenar lo que pienso.' },
         { title: 'Cocinar', text: 'Recetas, tiempos y prueba y error.' },
         { title: 'Editar', text: 'Video e imagen: composición y ritmo.' },
         { title: 'Oficios', text: 'Trabajo manual: entender cómo se arma algo.' },
-        { title: 'Conocer gente', text: 'Conversaciones con gente distinta a mí.' },
+        { title: 'Conocer gente', text: 'Aprender del otro.' },
         { title: 'Voluntariado', text: 'Proyectos comunitarios y clubes juveniles.' },
       ],
     },
@@ -69,12 +66,9 @@ const COPY = {
     hero: { role: 'Full Stack Developer', cta1: 'Projects', cta2: 'Download CV' },
     about: {
       tag: 'About',
-      h2a: 'Understand the problem ',
-      h2b: 'before picking the stack.',
-      caption: 'Paris, 2025',
-      p1: "I'm a full stack developer. I work at the Argentine Union of the Seventh-day Adventist Church building and maintaining the internal systems the organisation runs on, while studying Information Systems Engineering at Universidad Adventista del Plata.",
-      p2: "I move between frontend and backend: I model data, build APIs, design interfaces and automate whatever repeats. At Fisiopasteur I also act as Scrum Manager, so I'm used to talking directly to the people who will use the system.",
-      p3: 'Before coding I worked in purchasing, logistics and hospitality, in Argentina and Ireland. That left me with something I use every day: asking the right questions and explaining things plainly.',
+      p1: 'I am a Development and Infrastructure Analyst at the Argentine Union and a 4th-year Information Systems Engineering student. I am driven by continuous improvement, with a special interest in networking, telecommunications, and security. I am always looking for new opportunities to build robust technological solutions that solve real-world problems.',
+      p2: "I manage the software lifecycle end-to-end. I build full-stack applications, design modern interfaces, and administer Linux infrastructure. I lead the workflow, acting as a direct bridge between technical requirements and the user's actual needs.",
+      p3: 'My previous experience in purchasing and logistics in Argentina and Ireland helped me develop soft skills that I apply every day. I learned to listen empathetically to understand the real need behind every problem, and to communicate technical solutions in a clear and approachable way.'
     },
     work: {
       tag: 'Work', h2: 'One plot, one project',
@@ -100,7 +94,7 @@ const COPY = {
       ],
     },
     stack: {
-      tag: 'Tools', h2: 'What I work with', hint: 'The problem picks the tool.',
+      h2: 'Tools',
       groups: [
         { name: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -123,7 +117,7 @@ const COPY = {
         { title: 'Volunteering', text: 'Community projects and youth clubs.' },
       ],
     },
-    contact: { tag: 'Contact', where: 'Location', cv: 'CV', built: 'Built with Astro' },
+    contact: { tag: 'Contact', where: 'Location', cv: 'CV'},
   },
 };
 
@@ -201,11 +195,11 @@ const enProjects = PROJECTS.en;
 <html lang="es" data-lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Andrew Block Ernst — Full Stack Developer" />
-    <title>Andrew Block Ernst — Full Stack Developer</title>
+    <meta name="description" content="Andrew Block Ernst - Portfolio" />
+    <title>Andrew Block Ernst - Portfolio</title>
   </head>
   <body>
     <div style="width:100%; overflow-x:hidden; background:#F2F1E4">
@@ -541,22 +535,6 @@ const enProjects = PROJECTS.en;
         });
       }, { threshold: 0.1 });
       document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
-
-      /* ── Parallax ── */
-      const parA = document.getElementById('parA');
-      const parB = document.getElementById('parB');
-      const parC = document.getElementById('parC');
-      let raf = null;
-      function onScroll() {
-        const y = window.scrollY || 0;
-        if (parA) parA.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
-        if (parB) parB.style.transform = 'translate3d(0,' + (y * -0.07).toFixed(1) + 'px,0)';
-        if (parC) parC.style.transform = 'translate3d(0,' + (y * -0.13).toFixed(1) + 'px,0)';
-      }
-      window.addEventListener('scroll', () => {
-        if (raf) return;
-        raf = requestAnimationFrame(() => { raf = null; onScroll(); });
-      }, { passive: true });
 
       /* ── 3D Map ── */
       const plotMap = document.getElementById('plot-map');
