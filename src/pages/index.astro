@@ -8,6 +8,9 @@ const COPY = {
     hero: { role: 'Full Stack Developer', cta1: 'Proyectos', cta2: 'Descargar CV' },
     about: {
       tag: 'Sobre mí',
+      caption: 'París, 2025',
+      h2a: 'Entender el problema ',
+      h2b: 'antes de elegir el stack.',
       p1: 'Soy Analista de Desarrollo e Infraestructura en la Unión Argentina y estudiante de 4° año de Ingeniería en Sistemas. Además del desarrollo, me apasionan las redes y la seguridad de la infraestructura. Me impulsa la mejora continua, buscando proyectos para diseñar soluciones integrales que resuelvan problemas reales.',
       p2: 'Desarrollo aplicaciones full-stack, administro entornos Linux y cuido la experiencia de usuario. Al liderar el flujo de trabajo, funciono como puente directo entre los requerimientos técnicos y las necesidades reales del usuario.',
       p3: 'Mi experiencia previa en compras y logística en Argentina e Irlanda me ayudó a desarrollar habilidades blandas que hoy aplico a diario. Aprendí a escuchar con empatía para comprender la necesidad real detrás de cada problema, y a comunicar las soluciones técnicas de una manera clara y cercana.',
@@ -36,7 +39,7 @@ const COPY = {
       ],
     },
     stack: {
-      h2: 'Herramientas',
+      tag: 'Stack', h2: 'Herramientas', hint: 'El problema define la herramienta.',
       groups: [
         { name: 'Lenguajes', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -66,6 +69,9 @@ const COPY = {
     hero: { role: 'Full Stack Developer', cta1: 'Projects', cta2: 'Download CV' },
     about: {
       tag: 'About',
+      caption: 'Paris, 2025',
+      h2a: 'Understand the problem ',
+      h2b: 'before picking the stack.',
       p1: 'I am a Development and Infrastructure Analyst at the Argentine Union and a 4th-year Information Systems Engineering student. I am driven by continuous improvement, with a special interest in networking, telecommunications, and security. I am always looking for new opportunities to build robust technological solutions that solve real-world problems.',
       p2: "I manage the software lifecycle end-to-end. I build full-stack applications, design modern interfaces, and administer Linux infrastructure. I lead the workflow, acting as a direct bridge between technical requirements and the user's actual needs.",
       p3: 'My previous experience in purchasing and logistics in Argentina and Ireland helped me develop soft skills that I apply every day. I learned to listen empathetically to understand the real need behind every problem, and to communicate technical solutions in a clear and approachable way.'
@@ -94,7 +100,7 @@ const COPY = {
       ],
     },
     stack: {
-      h2: 'Tools',
+      tag: 'Stack', h2: 'Tools', hint: 'The problem picks the tool.',
       groups: [
         { name: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -117,7 +123,7 @@ const COPY = {
         { title: 'Volunteering', text: 'Community projects and youth clubs.' },
       ],
     },
-    contact: { tag: 'Contact', where: 'Location', cv: 'CV'},
+    contact: { tag: 'Contact', where: 'Location', cv: 'CV', built: 'Built with Astro' },
   },
 };
 
@@ -506,7 +512,9 @@ const enProjects = PROJECTS.en;
     </div>
 
     <script is:inline define:vars={{ esProjects: JSON.stringify(PROJECTS.es), enProjects: JSON.stringify(PROJECTS.en) }}>
+      /* @ts-ignore: vars injected by Astro */
       const PROJECTS_ES = JSON.parse(esProjects);
+      /* @ts-ignore: vars injected by Astro */
       const PROJECTS_EN = JSON.parse(enProjects);
 
       /* ── Language toggle ── */
@@ -584,11 +592,9 @@ const enProjects = PROJECTS.en;
         fillers.forEach(f => f.style.filter = 'saturate(0.82) brightness(0.97)');
       }
 
-      let currentHover = null;
       const counter = () => narrow.matches ? 'rotateZ(4deg) rotateX(-38deg)' : 'rotateZ(14deg) rotateX(-52deg)';
 
       function highlightPlot(id) {
-        currentHover = id;
         document.querySelectorAll('.plot-project').forEach(el => {
           const pid = el.dataset.projectId;
           const on = pid === id;
