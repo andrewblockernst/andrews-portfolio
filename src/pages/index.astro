@@ -195,6 +195,19 @@ const es = COPY.es;
 const en = COPY.en;
 const esProjects = PROJECTS.es;
 const enProjects = PROJECTS.en;
+
+const allEsTech = es.stack.groups.flatMap(g => g.items);
+const allEnTech = en.stack.groups.flatMap(g => g.items);
+const midTech = Math.ceil(allEsTech.length / 2);
+const techRow1Es = [...allEsTech.slice(0, midTech), ...allEsTech.slice(0, midTech), ...allEsTech.slice(0, midTech), ...allEsTech.slice(0, midTech)];
+const techRow1En = [...allEnTech.slice(0, midTech), ...allEnTech.slice(0, midTech), ...allEnTech.slice(0, midTech), ...allEnTech.slice(0, midTech)];
+const techRow2Es = [...allEsTech.slice(midTech), ...allEsTech.slice(midTech), ...allEsTech.slice(midTech), ...allEsTech.slice(midTech)];
+const techRow2En = [...allEnTech.slice(midTech), ...allEnTech.slice(midTech), ...allEnTech.slice(midTech), ...allEnTech.slice(midTech)];
+
+const lifeEs = es.life.items;
+const lifeEn = en.life.items;
+const loopLifeEs = [...lifeEs, ...lifeEs, ...lifeEs, ...lifeEs];
+const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
 ---
 
 <!doctype html>
@@ -230,31 +243,31 @@ const enProjects = PROJECTS.en;
       </header>
 
       <!-- ===== HERO ===== -->
-      <section id="top" style="position:relative; min-height:min(86vh,780px); display:flex; align-items:flex-end; overflow:hidden; background:linear-gradient(#CBDDE1 0%, #DCE5D9 58%, #E7E7CE 100%)">
-        <div id="parA" style="position:absolute; left:-5%; right:-5%; top:10%; height:36%; background:radial-gradient(60% 100% at 20% 100%, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%), radial-gradient(50% 100% at 64% 100%, rgba(255,255,255,0.7), rgba(255,255,255,0) 72%); pointer-events:none"></div>
-        <div id="parB" style="position:absolute; left:-8%; right:-8%; bottom:26%; height:26%; background:#9FB1A4; clip-path:polygon(0% 62%, 12% 40%, 26% 55%, 40% 26%, 55% 50%, 70% 32%, 84% 52%, 100% 38%, 100% 100%, 0% 100%); opacity:0.75"></div>
-        <div id="parC" style="position:absolute; left:-8%; right:-8%; bottom:14%; height:24%; background:#81907C; clip-path:polygon(0% 70%, 15% 50%, 32% 66%, 48% 44%, 64% 62%, 80% 46%, 100% 64%, 100% 100%, 0% 100%)"></div>
-        <div style="position:absolute; left:0; right:0; bottom:0; height:18%; background:linear-gradient(#6E7D70, #56655C)"></div>
-        <div style="position:absolute; left:0; right:0; bottom:0; height:18%; background:repeating-linear-gradient(103deg, rgba(226,224,200,0.14) 0 2px, rgba(226,224,200,0) 2px 26px)"></div>
+      <section id="top" style="position:relative; min-height:clamp(340px, 50vh, 520px); display:flex; align-items:center; justify-content:flex-start; overflow:hidden; background:linear-gradient(#CBDDE1 0%, #DCE5D9 58%, #E7E7CE 100%)">
+        <div id="parA" style="position:absolute; left:0; right:0; top:0; height:50%; background:linear-gradient(180deg, #CBDDE1 0%, rgba(203,221,225,0.85) 50%, rgba(220,229,217,0) 100%); pointer-events:none; z-index:1"></div>
+        <div id="parB" style="position:absolute; left:-8%; right:-8%; bottom:0; height:55%; background:linear-gradient(180deg, rgba(203,221,225,0.85) 0%, #9FB1A4 40%, #7A8B7D 100%); clip-path:polygon(0% 45%, 12% 25%, 26% 40%, 40% 10%, 55% 35%, 70% 15%, 84% 35%, 100% 20%, 100% 100%, 0% 100%); opacity:0.9"></div>
+        <div id="parC" style="position:absolute; left:-8%; right:-8%; bottom:0; height:42%; background:linear-gradient(180deg, #8A9B85 0%, #72826F 100%); clip-path:polygon(0% 48%, 15% 25%, 32% 42%, 48% 18%, 64% 38%, 80% 20%, 100% 40%, 100% 100%, 0% 100%)"></div>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:16%; background:linear-gradient(#6E7D70, #56655C)"></div>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:16%; background:repeating-linear-gradient(103deg, rgba(226,224,200,0.14) 0 2px, rgba(226,224,200,0) 2px 26px)"></div>
 
-        <div style="position:relative; z-index:2; width:100%; padding:clamp(56px,10vw,120px) clamp(18px,5vw,64px) clamp(52px,8vw,92px)">
+        <div style="position:relative; z-index:2; width:100%; padding:clamp(28px,4vw,48px) clamp(18px,5vw,64px) clamp(64px,10vw,88px)">
           <div style="max-width:1180px; margin:0 auto">
-            <h1 style="margin:0; font-weight:800; font-size:clamp(46px,11vw,152px); line-height:0.86; letter-spacing:-0.035em; text-transform:uppercase; color:#22302B">Andrew<br />Block<br />Ernst</h1>
-            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 28px; margin-top:clamp(24px,4vw,40px)">
-              <span style="font-weight:700; font-size:clamp(12px,1.4vw,15px); letter-spacing:0.14em; text-transform:uppercase; color:#3B4B45">Full Stack Developer</span>
-              <div style="display:flex; flex-wrap:wrap; gap:10px">
-                <a href="#proyectos" class="btn-primary"><span class="lang-es">{es.hero.cta1}</span><span class="lang-en">{en.hero.cta1}</span></a>
-                <a href="/assets/cv-andrew-es.pdf" target="_blank" rel="noopener" class="btn-outline lang-es">{es.hero.cta2}</a>
-                <a href="/assets/cv-andrew-en.pdf" target="_blank" rel="noopener" class="btn-outline lang-en">{en.hero.cta2}</a>
-              </div>
+            <h1 style="margin:0; font-weight:800; font-size:clamp(34px,6.8vw,88px); line-height:0.92; letter-spacing:-0.035em; text-transform:uppercase; color:#22302B">Andrew<br />Block<br />Ernst</h1>
+            <div style="margin-top:clamp(12px,2vw,18px)">
+              <span style="font-weight:700; font-size:clamp(12px,1.4vw,15px); letter-spacing:0.16em; text-transform:uppercase; color:#3B4B45; display:block">Full Stack Developer</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-start; gap:12px; margin-top:clamp(18px,3vw,28px)">
+              <a href="#proyectos" class="btn-primary"><span class="lang-es">{es.hero.cta1}</span><span class="lang-en">{en.hero.cta1}</span></a>
+              <a href="/assets/cv-andrew-es.pdf" target="_blank" rel="noopener" class="btn-outline lang-es">{es.hero.cta2}</a>
+              <a href="/assets/cv-andrew-en.pdf" target="_blank" rel="noopener" class="btn-outline lang-en">{en.hero.cta2}</a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ===== SOBRE MÍ ===== -->
-      <section id="sobre" style="padding:clamp(64px,10vw,128px) clamp(18px,5vw,64px); background:#F2F1E4">
-        <div data-reveal style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(34px,6vw,76px); align-items:start; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
+      <section id="sobre" style="padding:clamp(36px,5vw,64px) clamp(18px,5vw,64px); background:#F2F1E4">
+        <div data-reveal style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,4vw,52px); align-items:start; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
           <div>
             <div style="position:relative; overflow:hidden; background:#DCDCC4; aspect-ratio:4/5; max-width:430px">
               <img src="/images/retrato.jpg" alt="Andrew Block Ernst" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.8) contrast(1.03)" />
@@ -266,7 +279,7 @@ const enProjects = PROJECTS.en;
           </div>
           <div>
             <p class="section-tag"><span class="lang-es">{es.about.tag}</span><span class="lang-en">{en.about.tag}</span></p>
-            <h2 style="margin:0 0 26px; font-weight:700; font-size:clamp(27px,4vw,44px); line-height:1.06; letter-spacing:-0.025em; color:#22302B; max-width:24ch; text-wrap:balance">
+            <h2 style="margin:0 0 18px; font-weight:700; font-size:clamp(27px,4vw,44px); line-height:1.06; letter-spacing:-0.025em; color:#22302B; max-width:24ch; text-wrap:balance">
               <span class="lang-es">{es.about.h2a}<span style="color:#8A9890">{es.about.h2b}</span></span>
               <span class="lang-en">{en.about.h2a}<span style="color:#8A9890">{en.about.h2b}</span></span>
             </h2>
@@ -280,7 +293,7 @@ const enProjects = PROJECTS.en;
       </section>
 
       <!-- ===== PROYECTOS ===== -->
-      <section id="proyectos" style="padding:clamp(64px,10vw,116px) clamp(18px,5vw,64px) clamp(56px,8vw,100px); background:linear-gradient(#E9E8D3, #DFE3D4)">
+      <section id="proyectos" style="padding:clamp(36px,5vw,64px) clamp(18px,5vw,64px); background:linear-gradient(#E9E8D3, #DFE3D4)">
         <div style="max-width:1180px; margin:0 auto">
           <div data-reveal style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
             <div>
@@ -292,7 +305,7 @@ const enProjects = PROJECTS.en;
             </p>
           </div>
 
-          <div style="margin-top:clamp(36px,6vw,60px); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,4vw,44px); align-items:center">
+          <div style="margin-top:clamp(24px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,4vw,44px); align-items:center">
             <!-- 3D Map -->
             <div style="perspective:1100px; perspective-origin:50% 30%">
               <div id="plot-map" style="transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(4,1fr); gap:7px; aspect-ratio:5/4; background:#E4E1C6; padding:7px; box-shadow:0 40px 70px -40px rgba(38,51,46,0.55)">
@@ -372,102 +385,114 @@ const enProjects = PROJECTS.en;
       </section>
 
       <!-- ===== EXPERIENCIA ===== -->
-      <section id="experiencia" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:#3F534D; color:#E8E7D3">
+      <section id="experiencia" style="padding:clamp(32px,4.5vw,56px) clamp(18px,5vw,64px); background:#3F534D; color:#E8E7D3">
         <div data-reveal style="max-width:1000px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
           <p class="section-tag" style="color:#9CB0A6"><span class="lang-es">{es.exp.tag}</span><span class="lang-en">{en.exp.tag}</span></p>
-          <h2 class="section-h2" style="color:#F0EFDC; margin-bottom:clamp(32px,5vw,56px)"><span class="lang-es">{es.exp.h2}</span><span class="lang-en">{en.exp.h2}</span></h2>
+          <h2 class="section-h2" style="color:#F0EFDC; margin-bottom:clamp(18px,3vw,32px)"><span class="lang-es">{es.exp.h2}</span><span class="lang-en">{en.exp.h2}</span></h2>
           <div>
             {es.exp.items.map((e, i) => (
-              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 40px; padding:24px 0; border-top:1px solid rgba(232,231,211,0.22)">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:6px 30px; padding:14px 0; border-top:1px solid rgba(232,231,211,0.22)">
                 <div>
                   <div style="font-size:11.5px; letter-spacing:0.06em; color:#A6B49E">
                     <span class="lang-es">{e.when}</span><span class="lang-en">{en.exp.items[i].when}</span>
                   </div>
-                  <div style="margin-top:8px; font-size:16px; font-weight:600; color:#F0EFDC">
+                  <div style="margin-top:4px; font-size:15.5px; font-weight:600; color:#F0EFDC">
                     <span class="lang-es">{e.role}</span><span class="lang-en">{en.exp.items[i].role}</span>
                   </div>
-                  <div style="margin-top:4px; font-size:13.5px; color:#B4C2B7">
+                  <div style="margin-top:2px; font-size:13px; color:#B4C2B7">
                     <span class="lang-es">{e.org}</span><span class="lang-en">{en.exp.items[i].org}</span>
                   </div>
                 </div>
-                <p style="margin:0; grid-column:span 2; font-size:14.5px; line-height:1.66; color:#CFD6C9; max-width:60ch; text-wrap:pretty">
+                <p style="margin:0; grid-column:span 2; font-size:14px; line-height:1.55; color:#CFD6C9; max-width:62ch; text-wrap:pretty">
                   <span class="lang-es">{e.text}</span><span class="lang-en">{en.exp.items[i].text}</span>
                 </p>
               </div>
             ))}
           </div>
 
-          <p class="section-tag" style="color:#9CB0A6; margin-top:clamp(48px,7vw,80px)"><span class="lang-es">{es.edu.tag}</span><span class="lang-en">{en.edu.tag}</span></p>
+          <p class="section-tag" style="color:#9CB0A6; margin-top:clamp(28px,4.5vw,48px)"><span class="lang-es">{es.edu.tag}</span><span class="lang-en">{en.edu.tag}</span></p>
           <div>
             {es.edu.items.map((d, i) => (
-              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 40px; padding:22px 0; border-top:1px solid rgba(232,231,211,0.22)">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:6px 30px; padding:14px 0; border-top:1px solid rgba(232,231,211,0.22)">
                 <div>
                   <div style="font-size:11.5px; letter-spacing:0.06em; color:#A6B49E">{d.when}</div>
-                  <div style="margin-top:8px; font-size:16px; font-weight:600; color:#F0EFDC">
+                  <div style="margin-top:4px; font-size:15.5px; font-weight:600; color:#F0EFDC">
                     <span class="lang-es">{d.title}</span><span class="lang-en">{en.edu.items[i].title}</span>
                   </div>
                 </div>
-                <div style="grid-column:span 2; font-size:14.5px; line-height:1.6; color:#CFD6C9">{d.org}</div>
+                <div style="grid-column:span 2; font-size:14px; line-height:1.5; color:#CFD6C9">{d.org}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <!-- ===== STACK ===== -->
-      <section id="stack" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:#F2F1E4">
-        <div data-reveal style="max-width:1180px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
-          <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:clamp(30px,5vw,50px)">
-            <div>
-              <p class="section-tag"><span class="lang-es">{es.stack.tag}</span><span class="lang-en">{en.stack.tag}</span></p>
-              <h2 class="section-h2"><span class="lang-es">{es.stack.h2}</span><span class="lang-en">{en.stack.h2}</span></h2>
-            </div>
-            <p style="margin:0; max-width:30ch; font-size:12.5px; line-height:1.6; color:#57675F">
-              <span class="lang-es">{es.stack.hint}</span><span class="lang-en">{en.stack.hint}</span>
-            </p>
+      <!-- ===== STACK (HERRAMIENTAS) ===== -->
+      <section id="stack" style="padding:clamp(24px,4vw,36px) 0; background:#F2F1E4; border-top:1px solid rgba(79,99,94,0.18); border-bottom:1px solid rgba(79,99,94,0.18); overflow:hidden">
+        <div data-reveal style="opacity:0; transform:translateY(15px); transition:opacity .8s ease, transform .8s ease">
+          <div style="text-align:center; margin-bottom:16px; padding:0 18px">
+            <span style="font-size:11.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#6C7C74">
+              <span class="lang-es">{es.stack.h2} · {es.stack.hint}</span>
+              <span class="lang-en">{en.stack.h2} · {en.stack.hint}</span>
+            </span>
           </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(20px,3vw,36px)">
-            {es.stack.groups.map((g, gi) => (
-              <div style="padding-top:14px; border-top:2px solid #4E635E">
-                <div style="font-weight:700; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6C7C74; margin-bottom:14px">
-                  <span class="lang-es">{g.name}</span><span class="lang-en">{en.stack.groups[gi].name}</span>
-                </div>
-                <div style="display:flex; flex-wrap:wrap; gap:7px">
-                  {g.items.map((it, ii) => (
-                    <span class="stack-pill">
-                      <span class="lang-es">{it}</span><span class="lang-en">{en.stack.groups[gi].items[ii]}</span>
-                    </span>
-                  ))}
-                </div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div class="tech-carousel-container">
+              <div class="tech-carousel-track scroll-left">
+                {techRow1Es.map((it, idx) => (
+                  <span class="carousel-pill">
+                    <span class="lang-es">{it}</span>
+                    <span class="lang-en">{techRow1En[idx]}</span>
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
+            <div class="tech-carousel-container">
+              <div class="tech-carousel-track scroll-right">
+                {techRow2Es.map((it, idx) => (
+                  <span class="carousel-pill">
+                    <span class="lang-es">{it}</span>
+                    <span class="lang-en">{techRow2En[idx]}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ===== INTERESES ===== -->
-      <section id="intereses" style="padding:clamp(64px,10vw,124px) clamp(18px,5vw,64px); background:linear-gradient(#DFE3D4, #E9E8D3)">
-        <div data-reveal style="max-width:1180px; margin:0 auto; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
-          <p class="section-tag"><span class="lang-es">{es.life.tag}</span><span class="lang-en">{en.life.tag}</span></p>
-          <h2 class="section-h2" style="margin-bottom:clamp(30px,5vw,52px); max-width:22ch; text-wrap:balance"><span class="lang-es">{es.life.h2}</span><span class="lang-en">{en.life.h2}</span></h2>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px">
-            {es.life.items.map((l, i) => (
-              <div class="interest-card" style="padding:20px 18px 22px; background:rgba(242,241,228,0.72); border:1px solid rgba(79,99,94,0.16); transition:transform .3s ease, background .3s ease">
-                <div style={`width:20px; height:20px; border-radius:${SHAPES[i % SHAPES.length]}; background:${LIFE_COLORS[i % LIFE_COLORS.length]}; margin-bottom:14px`}></div>
-                <div style="font-size:15.5px; font-weight:600; color:#22302B; margin-bottom:6px">
-                  <span class="lang-es">{l.title}</span><span class="lang-en">{en.life.items[i].title}</span>
-                </div>
-                <div style="font-size:13.5px; line-height:1.55; color:#5A6A62; text-wrap:pretty">
-                  <span class="lang-es">{l.text}</span><span class="lang-en">{en.life.items[i].text}</span>
-                </div>
-              </div>
-            ))}
+      <section id="intereses" style="padding:clamp(28px,4vw,40px) 0; background:linear-gradient(#DFE3D4, #E9E8D3); overflow:hidden">
+        <div data-reveal style="opacity:0; transform:translateY(15px); transition:opacity .8s ease, transform .8s ease">
+          <div style="text-align:center; margin-bottom:16px; padding:0 18px">
+            <span style="font-size:11.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#5A6A62">
+              <span class="lang-es">{es.life.tag} · {es.life.h2}</span>
+              <span class="lang-en">{en.life.tag} · {en.life.h2}</span>
+            </span>
+          </div>
+          <div class="tech-carousel-container">
+            <div class="tech-carousel-track scroll-left-slow">
+              {loopLifeEs.map((l, i) => {
+                const idx = i % lifeEs.length;
+                return (
+                  <span class="interest-pill">
+                    <span style={`width:15px; height:15px; flex-shrink:0; display:inline-block; border-radius:${SHAPES[idx % SHAPES.length]}; background:${LIFE_COLORS[idx % LIFE_COLORS.length]}`}></span>
+                    <span style="font-weight:700; color:#22302B">
+                      <span class="lang-es">{l.title}</span><span class="lang-en">{loopLifeEn[i].title}</span>
+                    </span>
+                    <span style="color:#5A6A62; font-size:13px; margin-left:2px">
+                      <span class="lang-es">· {l.text}</span><span class="lang-en">· {loopLifeEn[i].text}</span>
+                    </span>
+                  </span>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ===== CONTACTO ===== -->
-      <section id="contacto" style="padding:clamp(52px,7vw,88px) clamp(18px,5vw,64px) clamp(30px,4vw,44px); background:#26332E; color:#E8E7D3">
+      <section id="contacto" style="padding:clamp(36px,5vw,56px) clamp(18px,5vw,64px) clamp(24px,3vw,36px); background:#26332E; color:#E8E7D3">
         <div style="max-width:1180px; margin:0 auto">
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(34px,6vw,72px); align-items:start">
             <div>
@@ -709,31 +734,33 @@ const enProjects = PROJECTS.en;
 
       /* buttons */
       .btn-primary {
-        display: inline-flex; align-items: center; padding: 12px 22px;
+        display: inline-flex; align-items: center; padding: 12px 24px;
         background: #26332E; color: #EFEEDC; font-weight: 700; font-size: 12.5px;
-        letter-spacing: 0.1em; text-transform: uppercase; transition: background .2s ease;
+        letter-spacing: 0.1em; text-transform: uppercase; transition: all .2s ease;
+        box-shadow: 0 4px 14px rgba(38,51,46,0.2);
       }
-      .btn-primary:hover { background: #4E635E; color: #F2F1E4; }
+      .btn-primary:hover { background: #4E635E; color: #F2F1E4; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(38,51,46,0.28); }
       .btn-outline {
-        display: inline-flex; align-items: center; padding: 12px 22px;
+        display: inline-flex; align-items: center; padding: 12px 24px;
+        background: rgba(242,241,228,0.5); backdrop-filter: blur(4px);
         border: 1px solid rgba(38,51,46,0.4); color: #26332E; font-weight: 700;
-        font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; transition: background .2s ease;
+        font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; transition: all .2s ease;
       }
-      .btn-outline:hover { background: rgba(255,255,255,0.55); }
+      .btn-outline:hover { background: rgba(255,255,255,0.8); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
 
       /* section shared */
       .section-tag {
-        margin: 0 0 18px; font-weight: 700; font-size: 11.5px;
+        margin: 0 0 12px; font-weight: 700; font-size: 11.5px;
         letter-spacing: 0.18em; text-transform: uppercase; color: #8A9890;
       }
       .section-h2 {
         margin: 0; font-weight: 700;
-        font-size: clamp(28px, 4.6vw, 50px); line-height: 1.02;
+        font-size: clamp(26px, 4.2vw, 46px); line-height: 1.05;
         letter-spacing: -0.03em; color: #22302B;
       }
       .about-text p {
-        margin: 0 0 18px; font-size: clamp(15px, 1.4vw, 17px);
-        line-height: 1.68; color: #3B4B45; max-width: 56ch; text-wrap: pretty;
+        margin: 0 0 12px; font-size: clamp(15px, 1.3vw, 16.5px);
+        line-height: 1.58; color: #3B4B45; max-width: 56ch; text-wrap: pretty;
       }
 
       /* tech tags */
@@ -742,16 +769,56 @@ const enProjects = PROJECTS.en;
         background: rgba(166,180,158,0.36); color: #3F534D;
       }
 
-      /* stack pills */
+      /* stack pills & carousel */
       .stack-pill {
         font-size: 12.5px; padding: 6px 10px;
         background: #E5E4CE; color: #3B4B45;
         border: 1px solid rgba(79,99,94,0.14); transition: background .2s ease, color .2s ease;
       }
       .stack-pill:hover { background: #A6B49E; color: #22302B; }
+      .tech-carousel-container {
+        width: 100%; overflow: hidden; position: relative; display: flex;
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      }
+      .tech-carousel-track {
+        display: flex; gap: 10px; width: max-content;
+      }
+      .scroll-left { animation: marquee-left 36s linear infinite; }
+      .scroll-right { animation: marquee-right 40s linear infinite; }
+      .scroll-left-slow { animation: marquee-left 34s linear infinite; }
+      .tech-carousel-track:hover { animation-play-state: paused; }
+      @keyframes marquee-left {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-25%, 0, 0); }
+      }
+      @keyframes marquee-right {
+        0% { transform: translate3d(-25%, 0, 0); }
+        100% { transform: translate3d(0, 0, 0); }
+      }
+      .carousel-pill {
+        font-size: 12.5px; padding: 6px 12px;
+        background: #E5E4CE; color: #3B4B45;
+        border: 1px solid rgba(79,99,94,0.18);
+        opacity: 0.5; white-space: nowrap; display: inline-block; cursor: default;
+        transition: opacity .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+      }
+      .carousel-pill:hover {
+        opacity: 1; background: #A6B49E; color: #22302B; transform: scale(1.05);
+      }
 
-      /* interest cards */
+      /* interest pills & carousel */
       .interest-card:hover { transform: translateY(-4px); background: #F2F1E4; }
+      .interest-pill {
+        font-size: 13.5px; padding: 8px 16px;
+        background: rgba(242,241,228,0.75); color: #3B4B45;
+        border: 1px solid rgba(79,99,94,0.22);
+        opacity: 0.65; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; cursor: default;
+        transition: opacity .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+      }
+      .interest-pill:hover {
+        opacity: 1; background: #F2F1E4; color: #22302B; transform: scale(1.04);
+      }
 
       /* preview stripes */
       .preview-stripes {
