@@ -16,10 +16,10 @@ const COPY = {
       p3: 'Mi experiencia previa en compras y logística en Argentina e Irlanda me ayudó a desarrollar habilidades blandas que hoy aplico a diario. Aprendí a escuchar con empatía para comprender la necesidad real detrás de cada problema, y a comunicar las soluciones técnicas de una manera clara y cercana.',
     },
     work: {
-      tag: 'Proyectos', h2: 'Cada parcela, un proyecto',
+      tag: 'Proyectos', h2: 'Cada parcela, una solución',
       hint: 'Recorré el mapa con el cursor. Click en una parcela para ver el detalle.',
       legend: 'Parcela', visit: 'Ver el sitio',
-      empty: { title: 'El terreno', desc: 'Cuatro parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] },
+      empty: { title: 'El terreno', desc: 'Cinco parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] },
     },
     exp: {
       tag: 'Experiencia', h2: 'Recorrido',
@@ -80,7 +80,7 @@ const COPY = {
       tag: 'Work', h2: 'One plot, one project',
       hint: 'Move across the map. Click a plot to open its detail.',
       legend: 'Plot', visit: 'Visit site',
-      empty: { title: 'The land', desc: 'Four worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] },
+      empty: { title: 'The land', desc: 'Five worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] },
     },
     exp: {
       tag: 'Experience', h2: 'The route so far',
@@ -134,44 +134,54 @@ const PROJECTS = {
       desc: 'App web que digitaliza la gestión de pacientes de un centro kinesiológico: turnos, fichas, profesionales y recordatorios automáticos por WhatsApp.',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'WhatsApp API'],
       rows: [{ k: 'Rol', v: 'Full stack · Scrum Manager' }, { k: 'Ámbito', v: 'Salud' }, { k: 'Desde', v: '2024' }],
-      url: 'https://fisiopasteur.vercel.app' },
+      url: 'https://fisiopasteur.vercel.app', logo: '/images/projects/fisio-icon.svg', preview: '/images/projects/fisiopasteur-preview.jpg' },
     { id: 'conqui', num: '02', name: 'Conquidex', kind: 'Gestión integral', area: '1/4/2/6', fill: '#7E9070',
       desc: 'Plataforma para la gestión de Clubes de Conquistadores: miembros, unidades, clases, asistencia y reportes. Pensada para que la use un equipo de voluntarios sin perfil técnico.',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind'],
       rows: [{ k: 'Rol', v: 'Producto y desarrollo' }, { k: 'Ámbito', v: 'Clubes juveniles' }, { k: 'Estado', v: 'En producción' }],
-      url: 'https://conquidex.vercel.app' },
+      url: 'https://conquidex.vercel.app', logo: '/images/projects/logo-conquidex.jpg', logoBgSize: '150%', preview: '/images/projects/conquidex-preview.jpg' },
     { id: 'balances', num: '03', name: '!Balances', kind: 'Finanzas', area: '3/3/5/5', fill: '#A6B49E',
       desc: 'Gestión presupuestaria personal: dinero, gastos e inversiones con una lectura clara del balance en el tiempo.',
       tags: ['TypeScript', 'React', 'PostgreSQL', 'Prisma'],
       rows: [{ k: 'Rol', v: 'Diseño y desarrollo' }, { k: 'Ámbito', v: 'Finanzas personales' }, { k: 'Estado', v: 'En producción' }],
-      url: 'https://nomecierranlosbalances.vercel.app' },
+      url: 'https://nomecierranlosbalances.vercel.app', logo: '/images/projects/logo-nobalances.png', preview: '/images/projects/nobalances-preview.jpg' },
     { id: 'cancionito', num: '04', name: 'Cancionito', kind: 'Bot de WhatsApp', area: '4/1/5/3', fill: '#889A7C',
       desc: 'Bot de WhatsApp que devuelve al instante la letra y los acordes de un himno. Sin apps, sin buscar: se escribe el nombre y llega la imagen.',
       tags: ['C#', 'ASP.NET', 'Python', 'ngrok'],
       rows: [{ k: 'Rol', v: 'Idea y desarrollo' }, { k: 'Ámbito', v: 'Proyecto propio' }, { k: 'Interfaz', v: 'WhatsApp' }],
-      url: '' },
+      url: '', logo: '/images/projects/logo-cancionito.png' },
+    { id: 'casamiento', num: '05', name: 'Casando Páginas', kind: 'Web de casamiento', area: '3/1/4/3', fill: '#8CA079',
+      desc: 'Página vidriera para casamientos: invitación digital, cronograma del evento, ubicación y confirmación de asistencia. Pensada como plantilla de uso libre y gratuito para cualquier pareja.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind'],
+      rows: [{ k: 'Rol', v: 'Diseño y desarrollo' }, { k: 'Ámbito', v: 'Eventos' }, { k: 'Acceso', v: 'Libre y gratuito' }],
+      url: '', logo: '/images/projects/logo-casamiento.jpg', preview: '/images/projects/casandopaginas-preview.jpg' },
   ],
   en: [
     { id: 'fisio', num: '01', name: 'Fisiopasteur', kind: 'Clinical ops', area: '1/1/3/3', fill: '#93A288',
       desc: 'Web app digitising patient management for a physiotherapy centre: appointments, records, practitioners and automated WhatsApp reminders.',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'WhatsApp API'],
       rows: [{ k: 'Role', v: 'Full stack · Scrum Manager' }, { k: 'Field', v: 'Health' }, { k: 'Since', v: '2024' }],
-      url: 'https://fisiopasteur.vercel.app' },
+      url: 'https://fisiopasteur.vercel.app', logo: '/images/projects/fisio-icon.svg', preview: '/images/projects/fisiopasteur-preview.jpg' },
     { id: 'conqui', num: '02', name: 'Conquidex', kind: 'Full management', area: '1/4/2/6', fill: '#7E9070',
       desc: 'Platform for Pathfinder club management: members, units, class records, attendance and reports. Built to be run by volunteers with no technical background.',
       tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind'],
       rows: [{ k: 'Role', v: 'Product and development' }, { k: 'Field', v: 'Youth clubs' }, { k: 'Status', v: 'Live' }],
-      url: 'https://conquidex.vercel.app' },
+      url: 'https://conquidex.vercel.app', logo: '/images/projects/logo-conquidex.jpg', logoBgSize: '150%', preview: '/images/projects/conquidex-preview.jpg' },
     { id: 'balances', num: '03', name: '!Balances', kind: 'Finance', area: '3/3/5/5', fill: '#A6B49E',
       desc: 'Personal budgeting: money, expenses and investments with a clear read of your balance over time.',
       tags: ['TypeScript', 'React', 'PostgreSQL', 'Prisma'],
       rows: [{ k: 'Role', v: 'Design and development' }, { k: 'Field', v: 'Personal finance' }, { k: 'Status', v: 'Live' }],
-      url: 'https://nomecierranlosbalances.vercel.app' },
+      url: 'https://nomecierranlosbalances.vercel.app', logo: '/images/projects/logo-nobalances.png', preview: '/images/projects/nobalances-preview.jpg' },
     { id: 'cancionito', num: '04', name: 'Cancionito', kind: 'WhatsApp bot', area: '4/1/5/3', fill: '#889A7C',
       desc: "WhatsApp bot that instantly returns hymn lyrics and chord images. No app, no searching: type the name, get the sheet.",
       tags: ['C#', 'ASP.NET', 'Python', 'ngrok'],
       rows: [{ k: 'Role', v: 'Idea and development' }, { k: 'Field', v: 'Personal project' }, { k: 'Interface', v: 'WhatsApp' }],
-      url: '' },
+      url: '', logo: '/images/projects/logo-cancionito.png' },
+    { id: 'casamiento', num: '05', name: 'Casando Páginas', kind: 'Wedding website', area: '3/1/4/3', fill: '#8CA079',
+      desc: 'Showcase page for weddings: digital invitation, event schedule, venue and RSVP. Built as a free, open template for any couple to use.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind'],
+      rows: [{ k: 'Role', v: 'Design and development' }, { k: 'Field', v: 'Events' }, { k: 'Access', v: 'Free & open' }],
+      url: '', logo: '/images/projects/logo-casamiento.jpg', preview: '/images/projects/casandopaginas-preview.jpg' },
   ],
 };
 
@@ -180,11 +190,7 @@ const FILLERS = [
   { area: '2/3/3/4', fill: '#D8D8BA' },
   { area: '2/4/3/5', fill: '#B4C09F' },
   { area: '2/5/3/6', fill: '#CFD3B2' },
-  { area: '3/1/4/2', fill: '#BCC7A6' },
-  { area: '3/2/4/3', fill: '#D3D5B6' },
   { area: '3/5/4/6', fill: '#A9B695' },
-  { area: '4/3/5/4', fill: '#C6CDAB' },
-  { area: '4/4/5/5', fill: '#B0BC9B' },
   { area: '4/5/5/6', fill: '#D8D8BA' },
 ];
 
@@ -293,7 +299,7 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       </section>
 
       <!-- ===== PROYECTOS ===== -->
-      <section id="proyectos" style="padding:clamp(36px,5vw,64px) clamp(18px,5vw,64px); background:linear-gradient(#E9E8D3, #DFE3D4)">
+      <section id="proyectos" style="padding:clamp(14px,2vw,26px) clamp(18px,5vw,64px) clamp(18px,2.5vw,32px); background:linear-gradient(#E9E8D3, #DFE3D4)">
         <div style="max-width:1180px; margin:0 auto">
           <div data-reveal style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease">
             <div>
@@ -305,9 +311,9 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
             </p>
           </div>
 
-          <div style="margin-top:clamp(24px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,4vw,44px); align-items:center">
+          <div id="work-stage" class="work-stage">
             <!-- 3D Map -->
-            <div style="perspective:1100px; perspective-origin:50% 30%">
+            <div class="map-col" style="perspective:1100px; perspective-origin:50% 30%">
               <div id="plot-map" style="transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.7,.2,1); display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(4,1fr); gap:7px; aspect-ratio:5/4; background:#E4E1C6; padding:7px; box-shadow:0 40px 70px -40px rgba(38,51,46,0.55)">
                 {/* Project plots */}
                 {esProjects.map((p, i) => (
@@ -318,12 +324,16 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
                     style={`grid-area:${p.area}; background:${p.fill}; transform:translateZ(6px); cursor:pointer; position:relative; transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease, filter .35s ease; box-shadow:0 10px 16px -12px rgba(38,51,46,0.4)`}
                   >
                     <div style={`position:absolute; inset:0; background:repeating-linear-gradient(96deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 9px); opacity:0.5`}></div>
+                    {p.logo && <div style={`position:absolute; inset:0; background-image:url(${p.logo}); background-size:${p.logoBgSize || 'cover'}; background-position:center; opacity:0.1; pointer-events:none`}></div>}
+                    <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); max-width:88%; font-size:8.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; text-align:center; line-height:1.3; color:#F5F4E6; text-shadow:0 1px 3px rgba(20,28,25,0.5); pointer-events:none">{p.name}</span>
                     <div class="plot-glow" style="position:absolute; inset:0; background:rgba(255,255,255,0.3); opacity:0; transition:opacity .35s ease"></div>
                     <div class="plot-dot" style="position:absolute; left:8px; top:8px; width:7px; height:7px; background:#26332E; opacity:0.55; transition:opacity .3s ease"></div>
                     <div style="position:absolute; left:50%; top:50%; width:0; height:0; transform-style:preserve-3d; pointer-events:none">
                       <div class="plot-bubble" style="position:absolute; left:-34px; top:-34px; width:68px; height:68px; transform-origin:50% 100%; opacity:0; transition:transform .5s cubic-bezier(.2,.9,.25,1.12), opacity .35s ease">
                         <div style="width:100%; height:100%; border-radius:50%; overflow:hidden; background:#F2F1E4; border:1px solid rgba(38,51,46,0.18); box-shadow:0 16px 22px -14px rgba(38,51,46,0.7); display:flex; align-items:center; justify-content:center; position:relative">
-                          <span style="font-size:8.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9AA79C">{p.num}</span>
+                          {p.logo
+                            ? <img src={p.logo} alt={p.name} style="width:100%; height:100%; object-fit:cover" />
+                            : <span style="font-size:8.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9AA79C">{p.num}</span>}
                         </div>
                         <div style="position:absolute; left:50%; bottom:-9px; width:2px; height:10px; margin-left:-1px; background:rgba(38,51,46,0.32)"></div>
                       </div>
@@ -334,18 +344,38 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
                 {FILLERS.map((f, i) => (
                   <div
                     class="plot plot-filler"
-                    style={`grid-area:${f.area}; background:${f.fill}; cursor:default; position:relative; transform-style:preserve-3d; transition:filter .35s ease`}
+                    style={`grid-area:${f.area}; background:${f.fill}; cursor:pointer; position:relative; transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease, filter .35s ease`}
                   >
                     <div style={`position:absolute; inset:0; background:${i % 2 === 0 ? 'repeating-linear-gradient(84deg, rgba(120,140,110,0.16) 0 1px, rgba(0,0,0,0) 1px 7px)' : 'repeating-linear-gradient(-78deg, rgba(120,140,110,0.13) 0 1px, rgba(0,0,0,0) 1px 11px)'}; opacity:0.5`}></div>
+                    <div class="filler-frame" style="position:absolute; inset:5px; border:1px dashed rgba(38,51,46,0.4); pointer-events:none; transition:border-color .3s ease"></div>
+                    <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); max-width:82%; font-size:7px; font-weight:700; letter-spacing:0.06em; text-align:center; line-height:1.6; color:rgba(38,51,46,0.48); pointer-events:none">
+                      <span class="lang-es">SE VENDE<br />PARCELA</span>
+                      <span class="lang-en">FOR SALE<br />PLOT</span>
+                    </span>
+                    <div style="position:absolute; left:50%; top:50%; width:0; height:0; transform-style:preserve-3d; pointer-events:none">
+                      <div class="filler-bubble" style="position:absolute; left:-74px; top:-34px; width:148px; height:68px; transform-origin:50% 100%; opacity:0; transition:transform .5s cubic-bezier(.2,.9,.25,1.12), opacity .35s ease; display:flex; align-items:center; justify-content:center; gap:12px">
+                        <a href="https://wa.me/541166782051" target="_blank" rel="noopener" class="filler-circle" aria-label="WhatsApp" style="pointer-events:auto; background:#25D366">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.34c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+                        </a>
+                        <a href="mailto:andrewblockernst@gmail.com" class="filler-circle" aria-label="Email" style="pointer-events:auto; background:#26332E">
+                          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2F1E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 ))}
+              </div>
+              <div class="map-back-wrap">
+                <button type="button" id="map-reset" class="map-reset-btn">
+                  <span class="lang-es">↩ Volver posición</span><span class="lang-en">↩ Reset position</span>
+                </button>
               </div>
             </div>
 
             <!-- Project detail panel -->
-            <div>
+            <div class="panel-col">
               <div id="project-panel" style="min-height:180px; padding:24px 26px; background:#F2F1E4; border:1px solid rgba(79,99,94,0.22); box-shadow:0 18px 40px -32px rgba(38,51,46,0.6)">
-                <div id="panel-preview" class="preview-stripes" style="position:relative; margin:-24px -26px 18px; aspect-ratio:16/10; overflow:hidden; display:flex; align-items:flex-end; padding:12px 14px">
+                <div id="panel-preview" class="preview-stripes" style="position:relative; margin:-24px -26px 16px; aspect-ratio:16/7; overflow:hidden; display:flex; align-items:flex-end; padding:12px 14px">
                   <span id="panel-img-label" style="font-size:10.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#7C8A80">
                     <span class="lang-es">Pasá por una parcela para previsualizar</span>
                     <span class="lang-en">Hover a plot to preview the project</span>
@@ -353,7 +383,7 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
                 </div>
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; padding-bottom:12px; margin-bottom:16px; border-bottom:1px solid rgba(79,99,94,0.2); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase">
                   <span style="color:#8A9890"><span class="lang-es">{es.work.legend}</span><span class="lang-en">{en.work.legend}</span></span>
-                  <span id="panel-counter" style="color:#4E635E">— / 04</span>
+                  <span id="panel-counter" style="color:#4E635E">— / 05</span>
                 </div>
                 <h3 id="panel-title" style="margin:0 0 10px; font-weight:700; font-size:clamp(21px,2.6vw,29px); line-height:1.06; letter-spacing:-0.02em; color:#22302B">
                   <span class="lang-es">{es.work.empty.title}</span><span class="lang-en">{en.work.empty.title}</span>
@@ -367,15 +397,15 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
                   ))}
                 </div>
               </div>
-              <div style="display:grid; gap:1px; margin-top:20px; background:rgba(79,99,94,0.2)">
+              <div class="project-list" style="display:grid; gap:1px; background:rgba(79,99,94,0.2)">
                 {esProjects.map((p, i) => (
-                  <button type="button" class="project-row" data-project-id={p.id} data-idx={i} style="all:unset; cursor:pointer; display:flex; align-items:center; gap:14px; padding:14px 16px; background:#F2F1E4; transition:background .25s ease">
-                    <span style="font-size:11.5px; color:#8A9890">{p.num}</span>
-                    <span style="flex:1; font-size:15px; font-weight:600; color:#22302B">{p.name}</span>
-                    <span class="project-row-kind" style="font-size:11.5px; color:#6C7C74">
+                  <button type="button" class="project-row" data-project-id={p.id} data-idx={i} style="all:unset; cursor:pointer; display:flex; align-items:center; gap:12px; padding:9px 14px; background:#F2F1E4; transition:background .25s ease">
+                    <span style="font-size:10.5px; color:#8A9890">{p.num}</span>
+                    <span style="flex:1; font-size:13.5px; font-weight:600; color:#22302B">{p.name}</span>
+                    <span class="project-row-kind" style="font-size:10.5px; color:#6C7C74">
                       <span class="lang-es">{p.kind}</span><span class="lang-en">{enProjects[i].kind}</span>
                     </span>
-                    <span style="font-size:13px; color:#4E635E; transition:transform .2s ease" class="row-arrow">→</span>
+                    <span style="font-size:12px; color:#4E635E; transition:transform .2s ease" class="row-arrow">→</span>
                   </button>
                 ))}
               </div>
@@ -521,6 +551,7 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       <!-- ===== PROJECT MODAL ===== -->
       <div id="project-modal" class="modal-overlay" style="display:none">
         <div id="modal-inner" class="modal-content">
+          <div id="modal-preview" style="display:none; margin:0 0 22px; aspect-ratio:16/9; background-color:#E8E7D3"></div>
           <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px">
             <div>
               <div id="modal-meta" style="font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#8A9890; margin-bottom:12px"></div>
@@ -592,8 +623,8 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       function getLang() { return root.getAttribute('data-lang') || 'es'; }
       function getProjects() { return getLang() === 'en' ? PROJECTS_EN : PROJECTS_ES; }
 
-      const emptyES = { title: 'El terreno', desc: 'Cuatro parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] };
-      const emptyEN = { title: 'The land', desc: 'Four worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] };
+      const emptyES = { title: 'El terreno', desc: 'Cinco parcelas trabajadas y varias en preparación. Las parcelas marcadas con un punto son proyectos; el resto es campo por sembrar.', tags: ['Full Stack', 'Producto', 'Automatización'] };
+      const emptyEN = { title: 'The land', desc: 'Five worked plots and a few still being prepared. Plots marked with a dot are projects; the rest is field waiting to be sown.', tags: ['Full Stack', 'Product', 'Automation'] };
 
       function setPanel(project) {
         if (!project) {
@@ -601,8 +632,10 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
           panelTitle.innerHTML = '<span class="lang-es">' + emptyES.title + '</span><span class="lang-en">' + emptyEN.title + '</span>';
           panelDesc.innerHTML = '<span class="lang-es">' + emptyES.desc + '</span><span class="lang-en">' + emptyEN.desc + '</span>';
           panelTags.innerHTML = empty.tags.map(t => '<span class="tech-tag">' + t + '</span>').join('');
-          panelCounter.textContent = '— / 04';
+          panelCounter.textContent = '— / 05';
           panelPreview.className = 'preview-stripes';
+          panelPreview.style.background = '';
+          panelImgLabel.style.color = '#7C8A80';
           panelImgLabel.innerHTML = '<span class="lang-es">Pasá por una parcela para previsualizar</span><span class="lang-en">Hover a plot to preview the project</span>';
           fillers.forEach(f => f.style.filter = 'saturate(1)');
           return;
@@ -610,9 +643,18 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
         panelTitle.textContent = project.name;
         panelDesc.textContent = project.desc;
         panelTags.innerHTML = project.tags.map(t => '<span class="tech-tag">' + t + '</span>').join('');
-        panelCounter.textContent = project.num + ' / 04';
+        panelCounter.textContent = project.num + ' / 05';
         panelPreview.className = '';
-        panelPreview.style.background = '#E8E7D3';
+        if (project.preview) {
+          panelPreview.style.background = "linear-gradient(180deg, rgba(34,48,43,0) 55%, rgba(34,48,43,0.6) 100%), #E8E7D3 url('" + project.preview + "') center/cover no-repeat";
+          panelImgLabel.style.color = '#F2F1E4';
+        } else if (project.logo) {
+          panelPreview.style.background = "#E8E7D3 url('" + project.logo + "') center/40% no-repeat";
+          panelImgLabel.style.color = '#7C8A80';
+        } else {
+          panelPreview.style.background = '#E8E7D3';
+          panelImgLabel.style.color = '#7C8A80';
+        }
         panelImgLabel.textContent = project.name;
         fillers.forEach(f => f.style.filter = 'saturate(0.82) brightness(0.97)');
       }
@@ -638,11 +680,35 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
         });
       }
 
-      function unhighlightAll() {
-        currentHover = null;
+      /* ── Centered ↔ split layout ── */
+      const workStage = document.getElementById('work-stage');
+      let lockedId = null;
+
+      function restoreLocked() {
+        if (lockedId) {
+          const lp = getProjects().find(pr => pr.id === lockedId);
+          highlightPlot(lockedId);
+          setPanel(lp);
+        } else {
+          highlightPlot(null);
+          setPanel(null);
+        }
+      }
+
+      function enterSplit(id) {
+        lockedId = id;
+        workStage.classList.add('is-split');
+        restoreLocked();
+      }
+
+      function resetMap() {
+        lockedId = null;
+        workStage.classList.remove('is-split');
         highlightPlot(null);
         setPanel(null);
       }
+
+      document.getElementById('map-reset').addEventListener('click', resetMap);
 
       // Plot events
       document.querySelectorAll('.plot-project').forEach(el => {
@@ -651,8 +717,15 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
           highlightPlot(el.dataset.projectId);
           setPanel(p);
         });
-        el.addEventListener('mouseleave', unhighlightAll);
-        el.addEventListener('click', () => openModal(el.dataset.projectId));
+        el.addEventListener('mouseleave', restoreLocked);
+        el.addEventListener('click', () => {
+          const id = el.dataset.projectId;
+          if (lockedId === id && workStage.classList.contains('is-split')) {
+            openModal(id);
+          } else {
+            enterSplit(id);
+          }
+        });
       });
 
       // Row events
@@ -662,9 +735,28 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
           highlightPlot(el.dataset.projectId);
           setPanel(p);
         });
-        el.addEventListener('mouseleave', unhighlightAll);
+        el.addEventListener('mouseleave', restoreLocked);
         el.addEventListener('click', () => openModal(el.dataset.projectId));
       });
+
+      // Filler ("for sale") events — same bubble mechanism as projects
+      function setFillerBubble(el, on) {
+        const b = el.querySelector('.filler-bubble');
+        if (!b) return;
+        b.style.transform = counter() + (on ? ' translateY(-62px) scale(1)' : ' translateY(6px) scale(0.18)');
+        b.style.opacity = on ? '1' : '0';
+      }
+      function liftFiller(el, on) {
+        el.style.transform = on ? 'translateZ(34px)' : 'translateZ(0)';
+        el.style.boxShadow = on ? '0 26px 34px -20px rgba(38,51,46,0.65)' : 'none';
+        setFillerBubble(el, on);
+      }
+      fillers.forEach(el => {
+        setFillerBubble(el, false);
+        el.addEventListener('mouseenter', () => { highlightPlot(null); setPanel(null); liftFiller(el, true); });
+        el.addEventListener('mouseleave', () => { liftFiller(el, false); restoreLocked(); });
+      });
+      narrow.addEventListener('change', () => fillers.forEach(el => setFillerBubble(el, false)));
 
       /* ── Modal ── */
       const modal = document.getElementById('project-modal');
@@ -676,10 +768,20 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       const modalUrlWrap = document.getElementById('modal-url-wrap');
       const modalClose = document.getElementById('modal-close');
       const modalInner = document.getElementById('modal-inner');
+      const modalPreview = document.getElementById('modal-preview');
 
       function openModal(id) {
         const p = getProjects().find(pr => pr.id === id);
         if (!p) return;
+        if (p.preview || p.logo) {
+          modalPreview.style.display = 'block';
+          modalPreview.style.backgroundImage = "url('" + (p.preview || p.logo) + "')";
+          modalPreview.style.backgroundSize = p.preview ? 'cover' : '42%';
+          modalPreview.style.backgroundPosition = 'center';
+          modalPreview.style.backgroundRepeat = 'no-repeat';
+        } else {
+          modalPreview.style.display = 'none';
+        }
         modalName.textContent = p.name;
         modalMeta.textContent = p.num + ' · ' + p.kind;
         modalDesc.textContent = p.desc;
@@ -707,6 +809,7 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       modalClose.addEventListener('click', closeModal);
       modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
       modalInner.addEventListener('click', (e) => e.stopPropagation());
+
       window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     </script>
 
@@ -828,6 +931,66 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
       /* project row hover */
       .project-row:hover { background: #E9E8D3 !important; }
       .project-row:hover .row-arrow { transform: translateX(4px); }
+
+      /* filler "for sale" hover */
+      .plot-filler:hover .filler-frame { border-color: rgba(38,51,46,0.7); }
+      .filler-circle {
+        width: 68px; height: 68px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        border: 1px solid rgba(38,51,46,0.18);
+        box-shadow: 0 16px 22px -14px rgba(38,51,46,0.7);
+        transition: transform .2s ease;
+      }
+      .filler-circle:hover { transform: scale(1.12); }
+
+      /* work stage: centered → split layout */
+      .work-stage {
+        margin-top: clamp(8px,1.4vw,18px);
+        display: flex; align-items: flex-start; justify-content: center;
+        gap: clamp(36px,6vw,84px);
+      }
+      .map-col {
+        display: flex; flex-direction: column;
+        flex: 0 0 auto; width: min(820px, 100%);
+        transition: width 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
+      }
+      /* centered: bigger map, nudged right */
+      .work-stage:not(.is-split) .map-col { transform: translateX(3%); }
+      .work-stage.is-split .map-col { width: min(560px, 50vw); transform: translateX(-3%); }
+      /* reclaim the empty vertical space the tilt leaves in the layout box
+         (heavier at the bottom when centered; lighter in split so the reset button clears) */
+      #plot-map { margin: -6% 0 -8%; }
+      .project-list { width: 100%; margin-top: 20px; }
+      .panel-col {
+        flex: 1 1 0; min-width: 0; align-self: flex-start;
+        position: relative; z-index: 2;
+        max-width: 0; opacity: 0; overflow: hidden;
+        transform: translateX(30px);
+        transition: max-width 1s cubic-bezier(.22,1,.36,1), opacity .8s ease, transform .9s cubic-bezier(.22,1,.36,1);
+      }
+      .work-stage.is-split .panel-col {
+        max-width: 520px; opacity: 1; transform: none;
+      }
+      .map-back-wrap {
+        text-align: center;
+        max-height: 0; opacity: 0; overflow: hidden;
+        transition: max-height .9s ease, opacity .7s ease, margin-top .9s ease;
+      }
+      .work-stage.is-split .map-back-wrap { max-height: 90px; opacity: 1; margin-top: clamp(28px,4vw,52px); }
+      .map-reset-btn {
+        all: unset; cursor: pointer; display: inline-flex; align-items: center;
+        padding: 9px 18px; background: rgba(242,241,228,0.7);
+        border: 1px solid rgba(38,51,46,0.35); color: #26332E;
+        font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+        transition: background .2s ease, transform .2s ease;
+      }
+      .map-reset-btn:hover { background: #26332E; color: #EFEEDC; transform: translateY(-1px); }
+      @media (max-width: 860px) {
+        .work-stage { flex-direction: column; align-items: stretch; }
+        .map-col, .work-stage.is-split .map-col { width: 100%; }
+        .work-stage.is-split .panel-col { max-width: 100%; }
+        .work-stage:not(.is-split) .map-col { transform: none; }
+      }
 
       /* contact */
       .email-link {
