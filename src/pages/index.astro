@@ -9,9 +9,9 @@ const COPY = {
     about: {
       tag: 'Sobre mí',
       caption: 'París, 2025',
-      h2a: 'Entender el problema ',
-      h2b: 'antes de elegir el stack.',
-      p1: 'Soy Analista de Desarrollo e Infraestructura en la Unión Argentina y estudiante de 4° año de Ingeniería en Sistemas. Además del desarrollo, me apasionan las redes y la seguridad de la infraestructura. Me impulsa la mejora continua, buscando proyectos para diseñar soluciones integrales que resuelvan problemas reales.',
+      h2a: 'Entender la necesidad ',
+      h2b: 'para otorgar la mejor solución.',
+      p1: 'Soy estudiante de 4° año de Ingeniería en Sistemas. Además del desarrollo, me apasionan las redes y la seguridad de la infraestructura. Me impulsa la mejora continua, buscando proyectos para diseñar soluciones integrales que resuelvan problemas reales.',
       p2: 'Desarrollo aplicaciones full-stack, administro entornos Linux y cuido la experiencia de usuario. Al liderar el flujo de trabajo, funciono como puente directo entre los requerimientos técnicos y las necesidades reales del usuario.',
       p3: 'Mi experiencia previa en compras y logística en Argentina e Irlanda me ayudó a desarrollar habilidades blandas que hoy aplico a diario. Aprendí a escuchar con empatía para comprender la necesidad real detrás de cada problema, y a comunicar las soluciones técnicas de una manera clara y cercana.',
     },
@@ -39,7 +39,7 @@ const COPY = {
       ],
     },
     stack: {
-      tag: 'Stack', h2: 'Herramientas', hint: 'El problema define la herramienta.',
+      tag: 'Stack', h2: 'Herramientas',
       groups: [
         { name: 'Lenguajes', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -70,9 +70,9 @@ const COPY = {
     about: {
       tag: 'About',
       caption: '',
-      h2a: 'Understand the problem ',
-      h2b: 'before picking the stack.',
-      p1: 'I am a Development and Infrastructure Analyst at the Argentine Union and a 4th-year Information Systems Engineering student. I am driven by continuous improvement, with a special interest in networking, telecommunications, and security. I am always looking for new opportunities to build robust technological solutions that solve real-world problems.',
+      h2a: 'Understand the need ',
+      h2b: 'to build the best solution.',
+      p1: 'I am a 4th-year Information Systems Engineering student. I am driven by continuous improvement, with a special interest in networking, telecommunications, and security. I am always looking for new opportunities to build robust technological solutions that solve real-world problems.',
       p2: "I manage the software lifecycle end-to-end. I build full-stack applications, design modern interfaces, and administer Linux infrastructure. I lead the workflow, acting as a direct bridge between technical requirements and the user's actual needs.",
       p3: 'My previous experience in purchasing and logistics in Argentina and Ireland helped me develop soft skills that I apply every day. I learned to listen empathetically to understand the real need behind every problem, and to communicate technical solutions in a clear and approachable way.'
     },
@@ -100,7 +100,7 @@ const COPY = {
       ],
     },
     stack: {
-      tag: 'Stack', h2: 'Tools', hint: 'The problem picks the tool.',
+      tag: 'Stack', h2: 'Tools',
       groups: [
         { name: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'Python', 'Java', 'SQL'] },
         { name: 'Frontend', items: ['Next.js', 'Nuxt.js', 'React', 'Vue', 'Astro', 'Tailwind', 'Vuetify'] },
@@ -459,8 +459,8 @@ const loopLifeEn = [...lifeEn, ...lifeEn, ...lifeEn, ...lifeEn];
         <div data-reveal style="opacity:0; transform:translateY(15px); transition:opacity .8s ease, transform .8s ease">
           <div style="text-align:center; margin-bottom:16px; padding:0 18px">
             <span style="font-size:11.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#6C7C74">
-              <span class="lang-es">{es.stack.h2} · {es.stack.hint}</span>
-              <span class="lang-en">{en.stack.h2} · {en.stack.hint}</span>
+              <span class="lang-es">{es.stack.h2}</span>
+              <span class="lang-en">{en.stack.h2}</span>
             </span>
           </div>
           <div style="display:flex; flex-direction:column; gap:10px">
